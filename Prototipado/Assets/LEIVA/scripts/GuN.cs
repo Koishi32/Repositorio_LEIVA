@@ -30,6 +30,7 @@ public class GuN : MonoBehaviour
             StartCoroutine("Firerate");
         }
     }
+    //Espera una cantidad de tiempo antes de que el jugador puede disparar
     IEnumerator Firerate() {
         yield return new WaitForSeconds(ShootInterval);
         canfire = true;
@@ -39,19 +40,22 @@ public class GuN : MonoBehaviour
         muzzleflash.Play();
         RaycastHit hit;
         disparoaudio.Play();
+        //Despues de los efectos de sonido y particulas, si el raycast detecta algo entonces imprime su nombre
         if (Physics.Raycast(FPSCAM.transform.position,FPSCAM.transform.forward,out hit,range)) {
             Debug.Log(hit.transform.name);
             Damageable target = hit.transform.GetComponent<Damageable>();
             if (target != null) {
-                target.takeDamage(damage);
+                target.takeDamage(damage); // Si el objeto golpeado por el ray cast tiene el script gamage entonces sufrira daño
             }
             if (hit.rigidbody != null) {
                 hit.rigidbody.AddForce(-hit.normal*impactforce);
             }
         }
+        // Instanci un efecto de impacto en el lugar que golpeo el raycast
         GameObject impactGO = Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
         //ParticleSystem nnuevon = creado.GetComponent<ParticleSystem>();
         //nnuevon.Play();
+        //Mata la particula instanciada para que no se acumulen game objects
         Destroy(impactGO,2);
     }
 

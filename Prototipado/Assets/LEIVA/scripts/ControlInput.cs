@@ -1,65 +1,40 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityStandardAssets.CrossPlatformInput;
-using UnityStandardAssets.Characters.FirstPerson;
+
 public class ControlInput : MonoBehaviour
 {
     public Animator animacion_FPS;
-    public bool is_FPS;
-    public float vel_walk;
-    public FirstPersonController Controlador_personaje;
+    float vel_walk;
+    Movimiento Moviento_Personaje;
+    float valor_anterior;
     // Start is called before the first frame update
     void Start()
     {
-        is_FPS = true;
-        animacion_FPS.SetBool("Is_moving", false);
-       
+        Moviento_Personaje = GameObject.Find("Jugador").GetComponent<Movimiento>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        revisa_movimiento();
         revisa_Input_Ataque();
     }
+
     public void revisa_Input_Ataque() {
-        if (Input.GetKeyDown(KeyCode.E)) {
-       //     float anterior = vel_anterior;
-        //    vel_anterior = 0;
-            animacion_FPS.SetTrigger("Atack");
+        if (Input.GetKeyDown(KeyCode.E)) { // si se presiona e 
+            if (Moviento_Personaje.is_FPS == false) { // y si no se esta en primera persona
+                animacion_FPS.SetTrigger("Atack"); // Activa animacion de ataque
+                valor_anterior = Moviento_Personaje.vel; // paraliza al personaje
+                Moviento_Personaje.vel = 0;
+            }
+          
         }
     }
-    public void restaurar ()
-    {
-
+    public void restaurar() {
+        Moviento_Personaje.vel = valor_anterior; // Restaura velocidad anterior del personaje
     }
-    public void revisa_movimiento() {
-        float horizontal = CrossPlatformInputManager.GetAxis("Horizontal");
-        float vertical = CrossPlatformInputManager.GetAxis("Vertical");
-        if (horizontal != 0 || vertical != 0)
-        {
-            animacion_FPS.SetBool("Is_moving", true);
-        }
-        else
-        {
-            animacion_FPS.SetBool("Is_moving", false);
-        }
-    }
-    public void cambio () {
-        is_FPS = !is_FPS;
-        if (is_FPS == true)
-        {
-            animacion_FPS.SetBool("Is_3RD", false);
-            animacion_FPS.SetBool("Is_FPS", true); // Activa animacion de apuntar
-        }
-        else
-        {
-            animacion_FPS.SetBool("Is_3RD", true); // Activa animacion de correr normal
-            animacion_FPS.SetBool("Is_FPS", false);
-        }
 
     }
 
 
-}
+

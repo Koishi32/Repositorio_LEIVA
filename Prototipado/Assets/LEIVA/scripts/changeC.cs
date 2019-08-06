@@ -4,28 +4,38 @@ using UnityEngine;
 
 public class changeC : MonoBehaviour
 {
-   public  Camera cam1;
-   public Camera cam2;
-    public GameObject Arma;
-    public ControlInput FPS_valor;
-    bool activado;
+   public  Camera cam1; // Guarda camara FPS
+   public Camera cam2; // Guarda camar Tercera persona
+    public GameObject Arma; // prefab del arma para FPS
+    public Movimiento FPS_valor; // Referencia para actiar animnaciones desde movimiento
+    bool activado; // prende apaga camaras
+    bool cambiando; //Indica si esta cambiando
+    public float tiempo_espera; // intervalo en que cambia camaras para dar tiempo entre cambios
     private void Start()
     {
-        cam1.enabled = true;
-        cam2.enabled = false;
         activado = true;
-        Arma.SetActive(activado);
+        cam1.gameObject.SetActive(activado);
+        cam2.gameObject.SetActive(!activado);
+        cambiando = false;
+        Arma.SetActive(activado); //Desactiva el arma de fuego
     }
     // Este efecto se puede lograr mas elegantemente con Cine machine , creo
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.Q) && cambiando==false)
         {
-            cam1.enabled = !cam1.enabled; // Voltea los activos de la camara (se cambia de camara)
-            cam2.enabled = !cam2.enabled;
-            activado = ! activado;
-            Arma.SetActive(activado); //Activa el arma de fuego
+            cambiando = true;
+            activado = !activado;
+            cam1.gameObject.SetActive(activado); // cambia las camaras activas
+            cam2.gameObject.SetActive(!activado);
+            Arma.SetActive(activado); //Activa o desactiva el arma de fuego el arma de fuego
             FPS_valor.cambio();
+            StartCoroutine("espera");
         }
+    }
+    IEnumerator espera ()
+    {
+        yield return new WaitForSeconds(tiempo_espera);
+        cambiando = false;
     }
 }
