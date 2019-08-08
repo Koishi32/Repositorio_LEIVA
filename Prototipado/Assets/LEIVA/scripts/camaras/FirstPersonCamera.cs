@@ -4,21 +4,15 @@ using UnityEngine;
 
 public class FirstPersonCamera : MonoBehaviour
 {
-    /*
-    Transform cabeza;
-    // Start is called before the first frame update
-    void Start()
+    //A la mejor ni se necesita script para la FirstPersonCamera
+ /*   public Image puntero;
+    //Solo activa y desactiva el sprite de mira cuando el jugador sale y entre de primera persona
+    private void Start()
     {
-        cabeza = GameObject.Find("cabeza_holder").GetComponent<Transform>();
+        puntero = GameObject.Find("Punteria").GetComponent<Image>();
     }
-
-    // Update is called once per frame
-    void Update()
+    private void Awake()
     {
-        if (Movimiento.is_FPS) {
-            this.transform.position = cabeza.position;
-            print("shit");
-        }
-        
+        puntero.enabled = true;
     }*/
 }

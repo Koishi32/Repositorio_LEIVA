@@ -24,9 +24,9 @@ public class Movimiento : MonoBehaviour
     {
         se_mueve(); // pregunta si se recive input
         salta(); // add force para saltars
-        //if (is_FPS) {
-            rotea(); //solo rotea si se esta en Primera persona
-        //}
+       
+        rotea(); 
+   
     }
 
     //Funcion para saltar solo añade fuerza
@@ -77,10 +77,11 @@ public class Movimiento : MonoBehaviour
 
     }
     //Control de la rotacion del jugador
-    private void LateUpdate()
+
+    private void FixedUpdate()
     {
         Quaternion rotation_Player = Quaternion.Euler(0, currentX, 0); //Rotacion depende del Mouse
-        this.transform.rotation =  rotation_Player;
+        this.transform.rotation = rotation_Player;
     }
-
+   
 }
