@@ -1767,3 +1767,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8eb30cf85fcf40478e592195b7657c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ANGLE_MIN: -30
+  ANGLE_MAX: 30

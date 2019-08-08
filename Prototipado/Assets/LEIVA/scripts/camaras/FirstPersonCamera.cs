@@ -2,17 +2,23 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+using UnityStandardAssets.CrossPlatformInput;
 public class FirstPersonCamera : MonoBehaviour
 {
-    //A la mejor ni se necesita script para la FirstPersonCamera
- /*   public Image puntero;
-    //Solo activa y desactiva el sprite de mira cuando el jugador sale y entre de primera persona
-    private void Start()
+    [Header("Camera_Angle")]
+    public float ANGLE_MIN;
+    public float ANGLE_MAX;
+    float currentX;
+    float currentY;
+
+    private void Update()
     {
-        puntero = GameObject.Find("Punteria").GetComponent<Image>();
+        currentX += CrossPlatformInputManager.GetAxis("Mouse Y");
+        currentY += CrossPlatformInputManager.GetAxis("Mouse X");
+        currentX = Mathf.Clamp(currentX, ANGLE_MIN, ANGLE_MAX);
     }
-    private void Awake()
-    {
-        puntero.enabled = true;
-    }*/
+    private void FixedUpdate() {
+        Quaternion rotation = Quaternion.Euler(-currentX,currentY,0); //Rotacion depende del Mouse
+        this.transform.rotation = rotation;
+    }
 }
