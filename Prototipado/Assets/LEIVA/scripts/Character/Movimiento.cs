@@ -7,10 +7,10 @@ public class Movimiento : MonoBehaviour
 {
     //Variables para controlar la animacion y el rigid body
     public Animator animacion_FPS;
-    public bool is_FPS;
+    public static bool is_FPS;
     public Rigidbody my_rigid;
     public float vel;
-
+    public float currentX;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,12 +24,15 @@ public class Movimiento : MonoBehaviour
     {
         se_mueve(); // pregunta si se recive input
         salta(); // add force para saltars
+        //if (is_FPS) {
+            rotea(); //solo rotea si se esta en Primera persona
+        //}
     }
 
     //Funcion para saltar solo añade fuerza
     public void salta() {
-        if (Input.GetKeyDown(KeyCode.Space)) {
-            my_rigid.AddForce(Vector3.up, ForceMode.Impulse); // Da el salton
+        if (Input.GetKeyDown(KeyCode.Space)) { //Arreglar vectores movimineto
+           // my_rigid.AddForce(Vector3.up, ForceMode.Impulse); // Da el salton
         }
     }
 
@@ -54,7 +57,10 @@ public class Movimiento : MonoBehaviour
         my_rigid.velocity = vel * (transform.forward * Vertical + transform.right * Horizontal);
 
     }
-
+    //Lee se el jugador mueve el Mouse X
+    public void rotea() {
+        currentX += CrossPlatformInputManager.GetAxis("Mouse X");
+    }
     // Cambia los booleanos deacuerdo a si es FPS o no
     public void cambio () { // Cambia los Booleanos para las animaciones
         is_FPS = !is_FPS;
@@ -70,6 +76,11 @@ public class Movimiento : MonoBehaviour
         }
 
     }
-
+    //Control de la rotacion del jugador
+    private void LateUpdate()
+    {
+        Quaternion rotation_Player = Quaternion.Euler(0, currentX, 0); //Rotacion depende del Mouse
+        this.transform.rotation =  rotation_Player;
+    }
 
 }
