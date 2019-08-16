@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a08e7b48012cb5040be157217023340d
+guid: 7d99e1b5ca6d9824484708b1592d86e7
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -139,7 +139,7 @@ ModelImporter:
     400130: mixamorig:Spine1
     400132: mixamorig:Spine2
     400134: //RootNode
-    7400000: GolpeEspada1
+    7400000: GolpeEspada2
     9500000: //RootNode
   externalObjects: {}
   materials:
@@ -170,17 +170,17 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: GolpeEspada1
+      name: GolpeEspada2
       takeName: mixamo.com
       firstFrame: 0
-      lastFrame: 45
+      lastFrame: 50
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 1
+      loopTime: 0
       loopBlend: 1
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -193,8 +193,8 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 0.9558499
-        functionName: restaurar
+      - time: 0.8341014
+        functionName: restaurar2
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: dd161ee1293995f448d55df8e09f55fc,
           type: 3}

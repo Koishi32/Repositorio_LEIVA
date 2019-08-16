@@ -9,7 +9,7 @@ public class ThirPersonCamera : MonoBehaviour
     [Header("Camera_Angle")]
     public float ANGLE_MIN ;
     public float ANGLE_MAX ;
-
+    public float offset; // Offset en X para alinearse con la FPS camera
     public Transform Mirar_jugador; //localizacion del jugador
     public Transform camTransform; //transform de esta camara
 
@@ -23,6 +23,10 @@ public class ThirPersonCamera : MonoBehaviour
         camTransform = transform;
         
        // Mirar_jugador = GameObject.Find("cabeza_holder").GetComponent<Transform>(); // mira ala cabeza del jugador
+    }
+    private void Awake()
+    {
+        
     }
     /*
     public void posicionar() {
@@ -46,7 +50,7 @@ public class ThirPersonCamera : MonoBehaviour
         //Offset de la camra con respecto al jugador
         
         Vector3 dir = new Vector3(0, 0, -distancia); // que tanto se aleja del jugador
-        Quaternion rotation = Quaternion.Euler(currentX, currentY, 0); //Rotacion depende del Mouse
+        Quaternion rotation = Quaternion.Euler(-currentX + offset, currentY, 0); //Rotacion depende del Mouse
         camTransform.position = Mirar_jugador.position + rotation * dir;
         //camTransform.position = 
         camTransform.LookAt(Mirar_jugador.position);    // Asegura que la rotacion sea  alrededor de ljugador

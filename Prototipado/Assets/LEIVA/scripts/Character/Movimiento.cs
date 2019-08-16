@@ -11,6 +11,8 @@ public class Movimiento : MonoBehaviour
     public Rigidbody my_rigid;
     public float vel;
     public float currentX;
+    public float vel_jump;
+    public float impulson; // fuerza añadida en tercer ataque
     // Start is called before the first frame update
     void Start()
     {
@@ -24,7 +26,6 @@ public class Movimiento : MonoBehaviour
     {
         se_mueve(); // pregunta si se recive input
         salta(); // add force para saltars
-       
         rotea(); 
    
     }
@@ -32,7 +33,7 @@ public class Movimiento : MonoBehaviour
     //Funcion para saltar solo añade fuerza
     public void salta() {
         if (Input.GetKeyDown(KeyCode.Space)) { //Arreglar vectores movimineto
-           // my_rigid.AddForce(Vector3.up, ForceMode.Impulse); // Da el salton
+            my_rigid.AddForce(Vector3.up * vel_jump, ForceMode.Impulse); // Da el salton
         }
     }
 
@@ -54,6 +55,8 @@ public class Movimiento : MonoBehaviour
     }
     // Se encarga de mover al personaje con el rigid bdy
     public void empezar_movimiento(float Horizontal,float Vertical) {
+        //Vector3 nuevo_vector = new Vector3(0, my_rigid.velocity.y, 0);
+       
         my_rigid.velocity = vel * (transform.forward * Vertical + transform.right * Horizontal);
 
     }
@@ -77,7 +80,11 @@ public class Movimiento : MonoBehaviour
 
     }
     //Control de la rotacion del jugador
-
+    //Le da un empujon al personaje como efecto
+    public void Dar_salton() {
+        print("recivio");
+        my_rigid.AddForce(transform.forward * impulson, ForceMode.Impulse);
+    }
     private void FixedUpdate()
     {
         Quaternion rotation_Player = Quaternion.Euler(0, currentX, 0); //Rotacion depende del Mouse

@@ -8,6 +8,7 @@ public class FirstPersonCamera : MonoBehaviour
     [Header("Camera_Angle")]
     public float ANGLE_MIN;
     public float ANGLE_MAX;
+    public float rotationX_speed; //velocidad del Giro de la camara
     float currentX;
     float currentY;
 
@@ -15,10 +16,12 @@ public class FirstPersonCamera : MonoBehaviour
     {
         currentX += CrossPlatformInputManager.GetAxis("Mouse Y");
         currentY += CrossPlatformInputManager.GetAxis("Mouse X");
-        currentX = Mathf.Clamp(currentX, ANGLE_MIN, ANGLE_MAX);
+        currentX = Mathf.Clamp(currentX, ANGLE_MIN, ANGLE_MAX); //Limita angulos en los que sube y baja cabeza
+        
     }
-    private void FixedUpdate() {
-        Quaternion rotation = Quaternion.Euler(-currentX,currentY,0); //Rotacion depende del Mouse
-        this.transform.rotation = rotation;
+    private void LateUpdate() { // Rotea junto con el Mouse
+     //Quaternion rotation = Quaternion.Euler(transform.rotation.x + (-currentX),transform.rotation.y +(currentY),transform.rotation.z); //Rotacion depende del Mouse
+     Quaternion rotation = Quaternion.Euler((-currentX), (currentY), transform.rotation.z);
+     this.transform.rotation = rotation;
     }
 }

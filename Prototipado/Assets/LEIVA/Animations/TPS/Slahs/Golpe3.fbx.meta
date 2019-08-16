@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 7d99e1b5ca6d9824484708b1592d86e7
+guid: 23385b7b1274fd149a2c9eb8ae61339e
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -139,7 +139,7 @@ ModelImporter:
     400130: mixamorig:Spine1
     400132: mixamorig:Spine2
     400134: //RootNode
-    7400000: mixamo.com
+    7400000: Golpe3
     9500000: //RootNode
   externalObjects: {}
   materials:
@@ -152,7 +152,7 @@ ModelImporter:
     bakeSimulation: 0
     resampleCurves: 1
     optimizeGameObjects: 0
-    motionNodeName: 
+    motionNodeName: mixamorig:Hips
     rigImportErrors: 
     rigImportWarnings: 
     animationImportErrors: 
@@ -170,17 +170,17 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: mixamo.com
+      name: Golpe3
       takeName: mixamo.com
       firstFrame: 0
-      lastFrame: 50
+      lastFrame: 73
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 1
+      loopTime: 0
       loopBlend: 1
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -192,7 +192,23 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: 0.33179724
+        functionName: empujon
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: dd161ee1293995f448d55df8e09f55fc,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.8314607
+        functionName: restaurar3
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: dd161ee1293995f448d55df8e09f55fc,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
