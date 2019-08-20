@@ -8,6 +8,7 @@ public class changeC : MonoBehaviour
    public  Camera cam1; // Guarda camara FPS
     public Camera cam2; // Guarda camar Tercera persona
     public GameObject Arma; // prefab del arma para FPS
+    public GameObject Arma_Meele;
     public Movimiento FPS_valor; // Referencia para actiar animnaciones desde movimiento
     bool activado; // prende apaga camaras
     bool cambiando; //Indica si esta cambiando
@@ -24,6 +25,7 @@ public class changeC : MonoBehaviour
         puntero = GameObject.Find("Punteria").GetComponent<Image>(); // consigue el sprite del puntero
         puntero.enabled = activado;
         RevisaI = GameObject.Find("Jugador").GetComponent<Movimiento>();
+        Arma_Meele.SetActive(!activado);
     }
     // Este efecto se puede lograr mas elegantemente con Cine machine , creo
     void Update()
@@ -37,6 +39,7 @@ public class changeC : MonoBehaviour
            // cam2.GetComponent<ThirPersonCamera>().posicionar();
             puntero.enabled = activado; // activa desactiva el puntero
             Arma.SetActive(activado); //Activa o desactiva el arma de fuego el arma de fuego
+            Arma_Meele.SetActive(!activado);
             FPS_valor.cambio();
             StartCoroutine("espera");
         }
