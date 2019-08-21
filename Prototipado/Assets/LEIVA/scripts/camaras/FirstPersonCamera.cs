@@ -1,8 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-using UnityStandardAssets.CrossPlatformInput;
 public class FirstPersonCamera : MonoBehaviour
 {
     [Header("Camera_Angle")]
@@ -14,8 +12,8 @@ public class FirstPersonCamera : MonoBehaviour
 
     private void Update()
     {
-        currentX += CrossPlatformInputManager.GetAxis("Mouse Y");
-        currentY += CrossPlatformInputManager.GetAxis("Mouse X");
+        currentX += Input.GetAxis("Mouse Y");
+        currentY += Input.GetAxis("Mouse X");
         currentX = Mathf.Clamp(currentX, ANGLE_MIN, ANGLE_MAX); //Limita angulos en los que sube y baja cabeza
         
     }

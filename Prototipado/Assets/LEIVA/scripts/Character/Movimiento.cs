@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityStandardAssets.CrossPlatformInput;
 
 public class Movimiento : MonoBehaviour
 {
@@ -40,8 +39,8 @@ public class Movimiento : MonoBehaviour
     //Seccion Importante Controla movimiento 
     
     public void se_mueve() {
-        float horizontal = CrossPlatformInputManager.GetAxis("Horizontal"); // para varias platadformas
-        float vertical = CrossPlatformInputManager.GetAxis("Vertical");
+        float horizontal = Input.GetAxis("Horizontal"); // para varias platadformas
+        float vertical = Input.GetAxis("Vertical");
         
         if (horizontal != 0 || vertical != 0)
         {
@@ -59,7 +58,7 @@ public class Movimiento : MonoBehaviour
     }
     //Lee se el jugador mueve el Mouse X
     public void rotea() {
-        currentX += CrossPlatformInputManager.GetAxis("Mouse X");
+        currentX += Input.GetAxis("Mouse X");
     }
     // Cambia los booleanos deacuerdo a si es FPS o no
     public void cambio () { // Cambia los Booleanos para las animaciones

@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityStandardAssets.CrossPlatformInput;
+
 
 public class ThirPersonCamera : MonoBehaviour
 {
@@ -25,8 +25,8 @@ public class ThirPersonCamera : MonoBehaviour
     
     private void Update()
     {
-        currentX +=CrossPlatformInputManager.GetAxis("Mouse Y");
-        currentY += CrossPlatformInputManager.GetAxis("Mouse X");
+        currentX +=Input.GetAxis("Mouse Y");
+        currentY += Input.GetAxis("Mouse X");
         currentX=Mathf.Clamp(currentX, ANGLE_MIN, ANGLE_MAX); // limita el giro de la camara
     }
     private void LateUpdate()
