@@ -74,7 +74,7 @@ public class ControlInput : MonoBehaviour
         Moviento_Personaje.vel = valor_anterior; //El tercer golpe es el ultimo ataque no necesita esperar por mas Input
     }
     public void empujon() {
-        print("envio");
+       // print("envio");
         SendMessage("Dar_salton");
     }
 

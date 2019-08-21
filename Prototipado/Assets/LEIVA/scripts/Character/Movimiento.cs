@@ -55,10 +55,7 @@ public class Movimiento : MonoBehaviour
     }
     // Se encarga de mover al personaje con el rigid bdy
     public void empezar_movimiento(float Horizontal,float Vertical) {
-        //Vector3 nuevo_vector = new Vector3(0, my_rigid.velocity.y, 0);
-       
         my_rigid.velocity = vel * (transform.forward * Vertical + transform.right * Horizontal);
-
     }
     //Lee se el jugador mueve el Mouse X
     public void rotea() {
@@ -82,7 +79,7 @@ public class Movimiento : MonoBehaviour
     //Control de la rotacion del jugador
     //Le da un empujon al personaje como efecto
     public void Dar_salton() {
-        print("recivio");
+        //print("recivio");
         my_rigid.AddForce(transform.forward * impulson, ForceMode.Impulse);
     }
     private void FixedUpdate()

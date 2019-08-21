@@ -20,7 +20,6 @@ public class FirstPersonCamera : MonoBehaviour
         
     }
     private void LateUpdate() { // Rotea junto con el Mouse
-     //Quaternion rotation = Quaternion.Euler(transform.rotation.x + (-currentX),transform.rotation.y +(currentY),transform.rotation.z); //Rotacion depende del Mouse
      Quaternion rotation = Quaternion.Euler((-currentX), (currentY), transform.rotation.z);
      this.transform.rotation = rotation;
     }

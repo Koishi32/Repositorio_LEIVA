@@ -21,7 +21,7 @@ public class changeC : MonoBehaviour
         cam1.gameObject.SetActive(activado);
         cam2.gameObject.SetActive(!activado);
         cambiando = false;
-        Arma.SetActive(activado); //Desactiva el arma de fuego
+        Arma.SetActive(activado); //activa el arma de fuego
         puntero = GameObject.Find("Punteria").GetComponent<Image>(); // consigue el sprite del puntero
         puntero.enabled = activado;
         RevisaI = GameObject.Find("Jugador").GetComponent<Movimiento>();
@@ -36,8 +36,8 @@ public class changeC : MonoBehaviour
             activado = !activado;
             cam1.gameObject.SetActive(activado); // cambia las camaras activas
             cam2.gameObject.SetActive(!activado);
-           // cam2.GetComponent<ThirPersonCamera>().posicionar();
             puntero.enabled = activado; // activa desactiva el puntero
+            Arma.GetComponentInChildren<GuN>().canfire = activado; ;
             Arma.SetActive(activado); //Activa o desactiva el arma de fuego el arma de fuego
             Arma_Meele.SetActive(!activado);
             FPS_valor.cambio();

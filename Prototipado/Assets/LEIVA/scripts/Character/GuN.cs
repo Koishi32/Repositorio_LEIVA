@@ -14,7 +14,7 @@ public class GuN : MonoBehaviour
     public float impactforce=100f;
     public float ShootInterval ;
     public AudioSource disparoaudio;
-    bool canfire = true;
+    public bool canfire = true;
    // private float nextTimeTofire = 0f;
 
     // Start is called before the first frame update
@@ -25,6 +25,7 @@ public class GuN : MonoBehaviour
         if (Input.GetButton("Fire1") && canfire)
         {
             canfire = false;
+            
             //nextTimeTofire = Time.time + 100f / firerate; // El fire rate es una decima de segundo 1/10
             Shoot();
             StartCoroutine("Firerate");
@@ -42,7 +43,6 @@ public class GuN : MonoBehaviour
         disparoaudio.Play();
         //Despues de los efectos de sonido y particulas, si el raycast detecta algo entonces imprime su nombre
         if (Physics.Raycast(FPSCAM.transform.position,FPSCAM.transform.forward,out hit,range)) {
-            Debug.Log(hit.transform.name);
             Damageable target = hit.transform.GetComponent<Damageable>();
             if (target != null) {
                 target.takeDamage(damage); // Si el objeto golpeado por el ray cast tiene el script gamage entonces sufrira daño
@@ -53,9 +53,6 @@ public class GuN : MonoBehaviour
         }
         // Instanci un efecto de impacto en el lugar que golpeo el raycast
         GameObject impactGO = Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
-        //ParticleSystem nnuevon = creado.GetComponent<ParticleSystem>();
-        //nnuevon.Play();
-        //Mata la particula instanciada para que no se acumulen game objects
         Destroy(impactGO,2);
     }
 
