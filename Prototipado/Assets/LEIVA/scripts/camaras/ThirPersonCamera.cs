@@ -19,13 +19,12 @@ public class ThirPersonCamera : Camera_I
     {
         camTransform = transform;
     }
-    
     private void LateUpdate()
     {
         //Offset de la camra con respecto al jugador
         
         Vector3 dir = new Vector3(0, 0, -distancia); // que tanto se aleja del jugador
-        Quaternion rotation = Quaternion.Euler(-currentX + offset, currentY, 0); //Rotacion depende del Mouse
+        Quaternion rotation = Quaternion.Euler(-currentX + offset, currentY , 0); //Rotacion depende del Mouse
         camTransform.position = Mirar_jugador.position + rotation * dir;
         camTransform.LookAt(Mirar_jugador.position);    // Asegura que la rotacion sea  alrededor de ljugador
     }

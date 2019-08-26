@@ -86,7 +86,7 @@ public class Movimiento : MonoBehaviour
         //print("recivio");
         my_rigid.AddForce(transform.forward * impulson, ForceMode.Impulse);
     }
-    private void FixedUpdate()
+    private void LateUpdate()
     {
         Quaternion rotation_Player = Quaternion.Euler(0, currentX, 0); //Rotacion depende del Mouse
         this.transform.rotation = rotation_Player;

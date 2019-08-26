@@ -35,4 +35,8 @@ public class timeManager : MonoBehaviour
             Tiemp_ui.text = "Tiempo: " + tiempo;
         }
     }
+    public float time_rise;
+    public void aumenta_tiempo() {
+        tiempo += time_rise;
+    }
 }

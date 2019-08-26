@@ -6,24 +6,28 @@ public class Damageable : MonoBehaviour
 {
     public float vida=50;
     public float reciveDaño_tiempo=0.50f;
-    public bool recive=true; 
-
+    public bool recive=true;
+    bool lives=true;
     public void takeDamage(float amount,string gun_type)
     {
-        switch (gun_type)
+        if (lives)
         {
-            case "Meele":
-                if (DoDamage())
-                {
-                vida -= amount;
-                }
-                break;
-            case "Gun":
-                vida -= amount;
-                break;
-        
+            switch (gun_type)
+            {
+                case "Meele":
+                    if (DoDamage())
+                    {
+                        vida -= amount;
+                    }
+                    break;
+                case "Gun":
+                    vida -= amount;
+                    break;
+
+            }
+            checkLife();
         }
-        checkLife();
+    
     }
 
     void checkLife() {
@@ -48,8 +52,20 @@ public class Damageable : MonoBehaviour
         yield return new WaitForSeconds(reciveDaño_tiempo);
         recive = true;
     }
-
-    void Die() => Destroy(gameObject);
-
+    Animator trigger_deaht;
+    void Die() {
+        lives = false;
+        if (this.tag == "Enemy") {
+            Destroy(this.GetComponentInChildren<NPCcontroller>());
+            trigger_deaht = this.GetComponentInChildren<Animator>();
+            trigger_deaht.SetTrigger("Is_Death");
+        }
+    }
+    public void desaparcer() {
+        if (this.tag == "Enemy")
+        {
+            Destroy(this.gameObject);
+        }
+    }
 
 }
