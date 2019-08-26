@@ -27,7 +27,10 @@ public class ControlInput : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        revisa_Input_Ataque();
+        if (Movimiento.Is_playable)
+        {
+            revisa_Input_Ataque();
+        }
        
     }
    // public int Input_count;

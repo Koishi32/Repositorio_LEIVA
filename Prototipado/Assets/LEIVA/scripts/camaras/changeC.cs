@@ -30,19 +30,28 @@ public class changeC : MonoBehaviour
     // Este efecto se puede lograr mas elegantemente con Cine machine , creo
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q) && cambiando==false && RevisaI.vel !=0)
+        if (Movimiento.Is_playable)
         {
-            cambiando = true;
-            activado = !activado;
-            cam1.gameObject.SetActive(activado); // cambia las camaras activas
-            cam2.gameObject.SetActive(!activado);
-            puntero.enabled = activado; // activa desactiva el puntero
-            Arma.GetComponentInChildren<GuN>().canfire = activado; ;
-            Arma.SetActive(activado); //Activa o desactiva el arma de fuego el arma de fuego
-            Arma_Meele.SetActive(!activado);
-            FPS_valor.cambio();
-            StartCoroutine("espera");
+            Recive();
         }
+    }
+    void Recive() {
+        if (Input.GetKeyDown(KeyCode.Q) && cambiando == false && RevisaI.vel != 0)
+        {
+            cambia_camaras();
+        }
+    }
+    public void cambia_camaras() {
+        cambiando = true;
+        activado = !activado;
+        cam1.gameObject.SetActive(activado); // cambia las camaras activas
+        cam2.gameObject.SetActive(!activado);
+        puntero.enabled = activado; // activa desactiva el puntero
+        Arma.GetComponentInChildren<GuN>().canfire = activado; ;
+        Arma.SetActive(activado); //Activa o desactiva el arma de fuego el arma de fuego
+        Arma_Meele.SetActive(!activado);
+        FPS_valor.cambio();
+        StartCoroutine("espera");
     }
     IEnumerator espera ()
     {

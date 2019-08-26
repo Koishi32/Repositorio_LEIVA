@@ -3,19 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class ThirPersonCamera : MonoBehaviour
+public class ThirPersonCamera : Camera_I
 {
+    public float ANGLE_MIN;
+    public float ANGLE_MAX;
     //Variables para restringir camara
     [Header("Camera_Angle")]
-    public float ANGLE_MIN ;
-    public float ANGLE_MAX ;
     public float offset; // Offset en X para alinearse con la FPS camera
     public Transform Mirar_jugador; //localizacion del jugador
     public Transform camTransform; //transform de esta camara
-
     public float distancia; // Que tanto se aleja
-    float currentX ;
-    float currentY ;
    
     // Start is called before the first frame update
     void Start()
@@ -23,12 +20,6 @@ public class ThirPersonCamera : MonoBehaviour
         camTransform = transform;
     }
     
-    private void Update()
-    {
-        currentX +=Input.GetAxis("Mouse Y");
-        currentY += Input.GetAxis("Mouse X");
-        currentX=Mathf.Clamp(currentX, ANGLE_MIN, ANGLE_MAX); // limita el giro de la camara
-    }
     private void LateUpdate()
     {
         //Offset de la camra con respecto al jugador
@@ -38,5 +29,7 @@ public class ThirPersonCamera : MonoBehaviour
         camTransform.position = Mirar_jugador.position + rotation * dir;
         camTransform.LookAt(Mirar_jugador.position);    // Asegura que la rotacion sea  alrededor de ljugador
     }
-    
+    public override void arreglo_angulos() {
+        currentX = Mathf.Clamp(currentX, ANGLE_MIN, ANGLE_MAX); //Limita angulos en los que sube y baja cabeza
+    }
 }

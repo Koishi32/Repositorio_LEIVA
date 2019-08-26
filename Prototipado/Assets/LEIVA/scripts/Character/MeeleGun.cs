@@ -14,7 +14,7 @@ public class MeeleGun : MonoBehaviour
     public void Start()
     {
         PlayerCamaraFPS = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Transform>();
-        recive = true;
+        
     }
     public void Update()
     {
@@ -24,29 +24,16 @@ public class MeeleGun : MonoBehaviour
     {
         if (Esta_Atacando && collision.gameObject.tag == "Enemy") {
             Damageable target = collision.transform.GetComponent<Damageable>();
-            if (target != null && DoDamage())
+            if (target != null)
             {
-                target.takeDamage(damage); // Si el objeto golpeado por el arma Meele
+                target.takeDamage(damage, "Meele"); // Si el objeto golpeado por el arma Meele
                 collision.gameObject.GetComponent<Rigidbody>().AddForce(PlayerCamaraFPS.transform.forward.normalized*impactforce,ForceMode.Impulse);
             }
            
         }
     }
 
-    public float reciveDaño_tiempo;
-    public bool recive;
-    public bool DoDamage() {
-        if (recive)
-        {
-            recive = false;
-            StartCoroutine("espera");
-            return true;
-        }
-        return false;
-    }
-    IEnumerator espera()
-    {
-        yield return new WaitForSeconds(reciveDaño_tiempo);
-        recive = true;
-    }
+    
+
+ 
 }

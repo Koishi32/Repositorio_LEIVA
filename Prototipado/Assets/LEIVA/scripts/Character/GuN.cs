@@ -15,17 +15,23 @@ public class GuN : MonoBehaviour
     public float ShootInterval ;
     public AudioSource disparoaudio;
     public bool canfire = true;
-   // private float nextTimeTofire = 0f;
+    // private float nextTimeTofire = 0f;
 
     // Start is called before the first frame update
 
     // Update is called once per frame
     void Update()
     {
+        if (Movimiento.Is_playable)
+        {
+            Recive();
+        }
+    }
+    void Recive() {
         if (Input.GetButton("Fire1") && canfire)
         {
             canfire = false;
-            
+
             //nextTimeTofire = Time.time + 100f / firerate; // El fire rate es una decima de segundo 1/10
             Shoot();
             StartCoroutine("Firerate");
@@ -45,7 +51,7 @@ public class GuN : MonoBehaviour
         if (Physics.Raycast(FPSCAM.transform.position,FPSCAM.transform.forward,out hit,range)) {
             Damageable target = hit.transform.GetComponent<Damageable>();
             if (target != null) {
-                target.takeDamage(damage); // Si el objeto golpeado por el ray cast tiene el script gamage entonces sufrira daño
+                target.takeDamage(damage,"Gun"); // Si el objeto golpeado por el ray cast tiene el script gamage entonces sufrira daño
             }
             if (hit.rigidbody != null) {
                 hit.rigidbody.AddForce(-hit.normal*impactforce);

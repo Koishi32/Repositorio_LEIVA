@@ -487,6 +487,7 @@ GameObject:
   m_Component:
   - component: {fileID: 999728053}
   - component: {fileID: 999728052}
+  - component: {fileID: 999728054}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -506,8 +507,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8058197f75d6a814eb4df06dddd9717f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tiempo: 500
+  tiempo: 60
   Tiemp_ui: {fileID: 2019858092}
+  player_script: {fileID: 0}
 --- !u!4 &999728053
 Transform:
   m_ObjectHideFlags: 0
@@ -522,6 +524,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &999728054
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 999728051}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 107819d2c273be94fa64316ebad45d26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentX: 0
+  currentY: 0
 --- !u!1 &1065727301
 GameObject:
   m_ObjectHideFlags: 0
@@ -14491,7 +14507,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -392.26, y: 100.7}
+  m_AnchoredPosition: {x: -175.3, y: 141.5}
   m_SizeDelta: {x: 283.67, y: 27.61}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2019858092
@@ -17156,7 +17172,7 @@ PrefabInstance:
     - target: {fileID: 6606789409268767129, guid: ac7a2b862aeed654e94e905ecaa78e80,
         type: 3}
       propertyPath: Atack_Interval
-      value: 0.3
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 6606789409268336063, guid: ac7a2b862aeed654e94e905ecaa78e80,
         type: 3}
@@ -17221,7 +17237,7 @@ PrefabInstance:
     - target: {fileID: 7422199052608648431, guid: ac7a2b862aeed654e94e905ecaa78e80,
         type: 3}
       propertyPath: impactforce
-      value: 2.5
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 7422199052608648431, guid: ac7a2b862aeed654e94e905ecaa78e80,
         type: 3}
@@ -17232,6 +17248,11 @@ PrefabInstance:
         type: 3}
       propertyPath: impulson
       value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 7422199053178638583, guid: ac7a2b862aeed654e94e905ecaa78e80,
+        type: 3}
+      propertyPath: my_life
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7422199052208853670, guid: ac7a2b862aeed654e94e905ecaa78e80,
         type: 3}
@@ -17248,6 +17269,21 @@ PrefabInstance:
       propertyPath: ShootInterval
       value: 0.6
       objectReference: {fileID: 0}
+    - target: {fileID: 4304202212036979730, guid: ac7a2b862aeed654e94e905ecaa78e80,
+        type: 3}
+      propertyPath: ANGLE_MIN_FPS
+      value: -5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4304202212036979730, guid: ac7a2b862aeed654e94e905ecaa78e80,
+        type: 3}
+      propertyPath: ANGLE_MAX_FPS
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 7422199053135985059, guid: ac7a2b862aeed654e94e905ecaa78e80,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 10301, guid: 0000000000000000f000000000000000, type: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ac7a2b862aeed654e94e905ecaa78e80, type: 3}
 --- !u!1001 &7863604846416218824
@@ -17327,6 +17363,11 @@ PrefabInstance:
       propertyPath: "reciveDa\xF1o_tiempo"
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 7863604846335986835, guid: c6ae9d620ba7862459717922d2a18d84,
+        type: 3}
+      propertyPath: vida
+      value: 110
+      objectReference: {fileID: 0}
     - target: {fileID: 7863604846335986833, guid: c6ae9d620ba7862459717922d2a18d84,
         type: 3}
       propertyPath: waypoints.Array.data[0]
@@ -17342,5 +17383,15 @@ PrefabInstance:
       propertyPath: waypoints.Array.data[2]
       value: 
       objectReference: {fileID: 1240853377}
+    - target: {fileID: 7863604846335986833, guid: c6ae9d620ba7862459717922d2a18d84,
+        type: 3}
+      propertyPath: aggroRange
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7863604846335986833, guid: c6ae9d620ba7862459717922d2a18d84,
+        type: 3}
+      propertyPath: patrolTime
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c6ae9d620ba7862459717922d2a18d84, type: 3}
