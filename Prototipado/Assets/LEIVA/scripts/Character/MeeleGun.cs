@@ -13,7 +13,7 @@ public class MeeleGun : MonoBehaviour
     // Start is called before the first frame update
     public virtual void Start()
     {
-        CharaForzeDir = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Transform>();
+        CharaForzeDir = GameObject.Find("cabeza_holder").GetComponent<Transform>();
         
     }
     public virtual void get_componenet() {

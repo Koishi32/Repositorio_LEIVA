@@ -10,9 +10,12 @@ public class timeManager : MonoBehaviour
     public Movimiento player_script;
     float vida_player;
     float original;
+    public float repanwtime = 3;
+    public GameObject jugador;
     // Start is called before the first frame update
     void Start()
     {
+        jugador = GameObject.FindGameObjectWithTag("Player");
         player_script = GameObject.FindGameObjectWithTag("Player").GetComponent<Movimiento>();
         vida_player = player_script.my_life;
         original = tiempo;
@@ -30,10 +33,18 @@ public class timeManager : MonoBehaviour
                 vida_player = 0;
                 tiempo = original;
                 player_script.muerte();
+
             }
             Tiemp_ui.text = "Tiempo: " + tiempo;
         }
     }
+    IEnumerator espera()
+    {
+        yield return new WaitForSeconds(repanwtime);
+
+        
+    }
+
     public float time_rise;
     public void aumenta_tiempo() {
         tiempo += time_rise;
