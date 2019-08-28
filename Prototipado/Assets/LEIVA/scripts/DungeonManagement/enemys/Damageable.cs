@@ -4,10 +4,18 @@ using UnityEngine;
 
 public class Damageable : MonoBehaviour
 {
-    public float vida=50;
-    public float reciveDaño_tiempo=0.50f;
+    public float vida;
+    public float reciveDaño_tiempo;
     public bool recive=true;
     bool lives=true;
+    bool is_player=false;
+    public void Start()
+    {
+        if (this.gameObject.tag == "Player") {
+            vida = GetComponent<Movimiento>().my_life;
+            is_player = true;
+        }
+    }
     public void takeDamage(float amount,string gun_type)
     {
         if (lives)
@@ -52,15 +60,21 @@ public class Damageable : MonoBehaviour
         yield return new WaitForSeconds(reciveDaño_tiempo);
         recive = true;
     }
+
     Animator trigger_deaht;
+
     void Die() {
         lives = false;
         if (this.tag == "Enemy") {
-            Destroy(this.GetComponentInChildren<NPCcontroller>());
-            trigger_deaht = this.GetComponentInChildren<Animator>();
-            trigger_deaht.SetTrigger("Is_Death");
+            SendMessage("cancelar_acciones");
+            trigger_deaht = this.GetComponent<Animator>();
+            trigger_deaht.SetTrigger("Is_Death"); //Asegurar que todas las trigger de enemigos sean Is_Death
+        }else if(is_player)
+        {
+            SendMessage("muerte");
         }
     }
+
     public void desaparcer() {
         if (this.tag == "Enemy")
         {

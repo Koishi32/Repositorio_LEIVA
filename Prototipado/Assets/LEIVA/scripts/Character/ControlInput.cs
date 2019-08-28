@@ -12,11 +12,12 @@ public class ControlInput : MonoBehaviour
     public float Atack_Interval; // tiempo que espera para que el jugador haga el siguiente ataque
     public bool is_Atacking;
     public string state;
-
+    public GameObject efecto_arma;
 
     // Start is called before the first frame update
     void Start()
     {
+        efecto_arma.SetActive(false);
         Moviento_Personaje = GameObject.Find("Jugador").GetComponent<Movimiento>();
         valor_anterior = Moviento_Personaje.vel;
     //    Atack_intervalAnt = Atack_Interval;
@@ -83,7 +84,9 @@ public class ControlInput : MonoBehaviour
 
     IEnumerator espera()
     {
+        efecto_arma.SetActive(true); //muestra al jugador momento para atacar
         yield return new WaitForSeconds(Atack_Interval); // Tiempo que espera para continuar combo tiene que ser mas corto que el ataque
+        efecto_arma.SetActive(false);
         if (is_Atacking==false) {
             state = "NoA";
             Moviento_Personaje.vel = valor_anterior;//Restaura velocidad , personaje puede volver a moverse

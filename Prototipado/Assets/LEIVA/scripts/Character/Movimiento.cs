@@ -59,7 +59,8 @@ public class Movimiento : MonoBehaviour
     }
     // Se encarga de mover al personaje con el rigid bdy
     public void empezar_movimiento(float Horizontal, float Vertical) {
-        my_rigid.velocity = vel * (transform.forward * Vertical + transform.right * Horizontal);
+        Vector3 conserva_jump = new Vector3(0, my_rigid.velocity.y, 0);
+        my_rigid.velocity =  ((vel*transform.forward*Vertical) + (vel*transform.right*Horizontal) + conserva_jump);
     }
     //Lee se el jugador mueve el Mouse X
     public void rotea() {
@@ -95,6 +96,7 @@ public class Movimiento : MonoBehaviour
         if (Movimiento.is_FPS == true) {
             SendMessage("cambia_camaras");
         }
+        Movimiento.Is_playable = false; // ya no se realiza ninguna accion
         animacion_FPS.SetTrigger("Is_Death");
         
    }

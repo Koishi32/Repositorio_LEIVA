@@ -29,7 +29,6 @@ public class timeManager : MonoBehaviour
             {
                 vida_player = 0;
                 tiempo = original;
-                Movimiento.Is_playable = false;
                 player_script.muerte();
             }
             Tiemp_ui.text = "Tiempo: " + tiempo;
