@@ -61,13 +61,13 @@ public class ControlInput : MonoBehaviour
         }
     }
     public void recibe_Damague() { // es llamada desde el Damageable del player
-        if (Not_beingAtacked) {
+        if (Not_beingAtacked && !is_Atacking) {
             Not_beingAtacked = false;
             is_Atacking = false;
-            state = "NoA";
+            /*state = "NoA";
             animacion_FPS.SetBool("Atack1", false);
             animacion_FPS.SetBool("Atack2", false);
-            animacion_FPS.SetBool("Atack3", false);
+            animacion_FPS.SetBool("Atack3", false);*/
             Moviento_Personaje.vel = 0;
             animacion_FPS.SetTrigger("Is_Hurt");
         } // Evita que se llame dos veces

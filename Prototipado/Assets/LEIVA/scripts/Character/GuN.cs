@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 
 public class GuN : MonoBehaviour
 {
@@ -15,6 +15,9 @@ public class GuN : MonoBehaviour
     public float ShootInterval ;
     public AudioSource disparoaudio;
     public bool canfire = true;
+    public Text daño_armaGunUI;
+    public Text daño_armaMeeleUI;
+    public MeeleGun meeleGun;
     // private float nextTimeTofire = 0f;
 
     // Start is called before the first frame update
@@ -25,6 +28,8 @@ public class GuN : MonoBehaviour
         if (Movimiento.Is_playable)
         {
             Recive();
+            daño_armaGunUI.text = "Daño Gun: " + damage;
+            daño_armaMeeleUI.text = "Daño_Meele: " + meeleGun.damage;
         }
     }
     void Recive() {

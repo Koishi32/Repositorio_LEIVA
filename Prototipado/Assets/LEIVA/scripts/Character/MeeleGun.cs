@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class MeeleGun : MonoBehaviour
 {
     public float damage;
@@ -10,6 +9,7 @@ public class MeeleGun : MonoBehaviour
     public float impactforce;
     public string Nombre_Objetivo; //Nombre de la game object tag a la que se hara daño
     public Transform CharaForzeDir; //adelante del que hace daño para infligir fuerza
+    
     // Start is called before the first frame update
     public virtual void Start()
     {

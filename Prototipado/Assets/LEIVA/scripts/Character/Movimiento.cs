@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class Movimiento : MonoBehaviour
 {
     //Variables para controlar la animacion y el rigid body
@@ -14,6 +14,7 @@ public class Movimiento : MonoBehaviour
     public float vel_jump;
     public float impulson; // fuerza añadida en tercer ataque
     public float my_life;
+    public Text miVidaUI;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +31,7 @@ public class Movimiento : MonoBehaviour
             se_mueve(); // pregunta si se recive input
             salta(); // add force para saltars
             rotea();
+            miVidaUI.text = "Vida: " + my_life;
         }
 
     }

@@ -70,7 +70,7 @@ public class Damageable : MonoBehaviour
 
     Animator trigger_deaht;
 
-    void Die() {
+    public virtual void Die() {
         lives = false;
         if (this.tag == "Enemy") {
             SendMessage("cancelar_acciones");
