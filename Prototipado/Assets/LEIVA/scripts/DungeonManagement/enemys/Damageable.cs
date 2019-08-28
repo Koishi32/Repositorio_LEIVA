@@ -25,7 +25,7 @@ public class Damageable : MonoBehaviour
                 case "Meele":
                     if (DoDamage())
                     {
-                        if (is_player && this.GetComponent<ControlInput>().Not_beingAtacked)
+                        if (is_player && ControlInput.Not_beingAtacked)
                         { //Se asegura que solo recibe un daño por animación
                             SendMessage("recibe_Damague");
                             vida -= amount;

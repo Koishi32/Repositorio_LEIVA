@@ -13,6 +13,8 @@ public class NPCcontroller : MonoBehaviour
     Animator mis_animaciones;
     public float agentSpeed;
     public bool is_atacking;
+    public bool canHarm;
+    public float HarmTime;
     float normalSPEED;
     int index;
     bool can_do=true;
@@ -22,6 +24,7 @@ public class NPCcontroller : MonoBehaviour
     
     private void Start() {
         agent =GetComponent<NavMeshAgent>();
+        canHarm = false;
         mis_animaciones = gameObject.GetComponent<Animator>();
         mis_animaciones.SetBool("Atack1", false);
         agentSpeed = agent.speed;
@@ -45,12 +48,19 @@ public class NPCcontroller : MonoBehaviour
     void atacar_player() {
         if (Movimiento.Is_playable && Vector3.Distance(transform.position,player.position) < atackRange && is_atacking ==false) {
             agentSpeed = 0;
+            is_atacking = true;
             mis_animaciones.SetBool("Atack1",true);
-            StartCoroutine("espera");//Antes de activar la animacion se asegura que el jugador este y que no se interrumpa animacion
+            StartCoroutine("espera2");
         }
+    }
+    IEnumerator espera2() {
+        yield return new WaitForSeconds(HarmTime);
+        canHarm = true;
     }
     public void revert() {
         mis_animaciones.SetBool("Atack1", false);
+        canHarm = false;
+        StartCoroutine("espera");//Antes de activar la animacion se asegura que el jugador este y que no se interrumpa animacion
         agentSpeed = normalSPEED;
     }
     void Patrol() {
@@ -72,14 +82,9 @@ public class NPCcontroller : MonoBehaviour
         CancelInvoke();
     }
     IEnumerator espera()
-    {
-        if (is_atacking == false)
-        {
-            is_atacking = true;
+    { 
             yield return new WaitForSeconds(Atack_Interval); // Tiempo que espera para continuar 
             is_atacking = false;
-        }
-        yield return 0;
     }
     private void OnDrawGizmos() { 
     Gizmos.color = Color.red;

@@ -11,6 +11,6 @@ public class GunEnemy : MeeleGun
     }
     public override void get_componenet()
     {
-        ataca_meele = this.GetComponentInParent<NPCcontroller>().is_atacking;
+        ataca_meele = this.GetComponentInParent<NPCcontroller>().canHarm;
     }
 }

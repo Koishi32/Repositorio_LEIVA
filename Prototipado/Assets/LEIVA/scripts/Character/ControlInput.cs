@@ -14,7 +14,7 @@ public class ControlInput : MonoBehaviour
     public float wait_painEnd; //tiempo antes de que haga otra animacion de dolor
     public string state;
     public GameObject efecto_arma;
-    public bool Not_beingAtacked;
+    public static bool Not_beingAtacked;
     // Start is called before the first frame update
     void Start()
     {
@@ -33,6 +33,7 @@ public class ControlInput : MonoBehaviour
         if (Movimiento.Is_playable && Not_beingAtacked)
         {
             revisa_Input_Ataque();
+            print(Moviento_Personaje.vel);
         }
        
     }
@@ -98,8 +99,8 @@ public class ControlInput : MonoBehaviour
     }
     IEnumerator espera2()
     {
-        yield return new WaitForSeconds(wait_painEnd); // Tiempo que espera para hacer otra animacion de dolor
         print("waiting");
+        yield return new WaitForSeconds(wait_painEnd); // Tiempo que espera para hacer otra animacion de dolor
         Not_beingAtacked = true;
     }
     public void empujon() {

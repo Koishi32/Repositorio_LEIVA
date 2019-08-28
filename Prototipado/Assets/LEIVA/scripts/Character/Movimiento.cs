@@ -25,7 +25,7 @@ public class Movimiento : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Is_playable)
+        if (Is_playable && ControlInput.Not_beingAtacked)
         {
             se_mueve(); // pregunta si se recive input
             salta(); // add force para saltars
