@@ -38,8 +38,8 @@ public class NPCcontroller : MonoBehaviour
     void Update() {
         if (can_do) {
             atacar_player(); //Sera algo lento al atacar al enemigo
-            print(agentSpeed);
-            print(normalSPEED);
+            //print(agentSpeed);
+           // print(normalSPEED);
         }
     }
     void atacar_player() {
@@ -68,6 +68,7 @@ public class NPCcontroller : MonoBehaviour
     }
     public void cancelar_acciones() {
         can_do = false;
+        agent.isStopped = true;
         CancelInvoke();
     }
     IEnumerator espera()
@@ -75,9 +76,10 @@ public class NPCcontroller : MonoBehaviour
         if (is_atacking == false)
         {
             is_atacking = true;
+            yield return new WaitForSeconds(Atack_Interval); // Tiempo que espera para continuar 
+            is_atacking = false;
         }
-        yield return new WaitForSeconds(Atack_Interval); // Tiempo que espera para continuar combo tiene que ser mas corto que el ataque
-        is_atacking = false;
+        yield return 0;
     }
     private void OnDrawGizmos() { 
     Gizmos.color = Color.red;

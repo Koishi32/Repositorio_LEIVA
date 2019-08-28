@@ -9,12 +9,8 @@ public class GunEnemy : MeeleGun
     {
         CharaForzeDir = GameObject.FindGameObjectWithTag("Enemy").GetComponent<Transform>();
     }
-
-    // Update is called once per frame
-    public override void Update()
+    public override void get_componenet()
     {
         ataca_meele = this.GetComponentInParent<NPCcontroller>().is_atacking;
     }
-    
-
 }

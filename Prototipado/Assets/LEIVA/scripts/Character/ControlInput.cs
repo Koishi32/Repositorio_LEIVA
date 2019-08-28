@@ -11,9 +11,10 @@ public class ControlInput : MonoBehaviour
   //  float Atack_intervalAnt;
     public float Atack_Interval; // tiempo que espera para que el jugador haga el siguiente ataque
     public bool is_Atacking;
+    public float wait_painEnd; //tiempo antes de que haga otra animacion de dolor
     public string state;
     public GameObject efecto_arma;
-
+    public bool Not_beingAtacked;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,12 +24,13 @@ public class ControlInput : MonoBehaviour
     //    Atack_intervalAnt = Atack_Interval;
         is_Atacking = false;
         state = "NoA";
+        Not_beingAtacked = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Movimiento.Is_playable)
+        if (Movimiento.Is_playable && Not_beingAtacked)
         {
             revisa_Input_Ataque();
         }
@@ -57,6 +59,18 @@ public class ControlInput : MonoBehaviour
             }
         }
     }
+    public void recibe_Damague() { // es llamada desde el Damageable del player
+        if (Not_beingAtacked) {
+            Not_beingAtacked = false;
+            is_Atacking = false;
+            state = "NoA";
+            animacion_FPS.SetBool("Atack1", false);
+            animacion_FPS.SetBool("Atack2", false);
+            animacion_FPS.SetBool("Atack3", false);
+            Moviento_Personaje.vel = 0;
+            animacion_FPS.SetTrigger("Is_Hurt");
+        } // Evita que se llame dos veces
+    }
     public void restaurar1() {
         animacion_FPS.SetBool("Atack1", false);
         is_Atacking = false;
@@ -76,6 +90,17 @@ public class ControlInput : MonoBehaviour
         is_Atacking = false;
         state = "NoA";
         Moviento_Personaje.vel = valor_anterior; //El tercer golpe es el ultimo ataque no necesita esperar por mas Input
+    }
+    public void restaurar4()
+    {
+        Moviento_Personaje.vel = valor_anterior;
+        StartCoroutine("espera2");
+    }
+    IEnumerator espera2()
+    {
+        yield return new WaitForSeconds(wait_painEnd); // Tiempo que espera para hacer otra animacion de dolor
+        print("waiting");
+        Not_beingAtacked = true;
     }
     public void empujon() {
        // print("envio");
