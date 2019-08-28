@@ -20,7 +20,7 @@ public class ControlInput : MonoBehaviour
     {
         efecto_arma.SetActive(false);
         Moviento_Personaje = GameObject.Find("Jugador").GetComponent<Movimiento>();
-        valor_anterior = Moviento_Personaje.vel;
+        valor_anterior = Moviento_Personaje.get_vel();
     //    Atack_intervalAnt = Atack_Interval;
         is_Atacking = false;
         state = "NoA";
@@ -33,7 +33,7 @@ public class ControlInput : MonoBehaviour
         if (Movimiento.Is_playable && Not_beingAtacked)
         {
             revisa_Input_Ataque();
-            print(Moviento_Personaje.vel);
+           // print(Moviento_Personaje.vel);
         }
        
     }
@@ -59,6 +59,16 @@ public class ControlInput : MonoBehaviour
                     break;
             }
         }
+    }
+    public void Reset()
+    {
+        state = "NoA";
+        valor_anterior = Moviento_Personaje.get_vel();
+        //    Atack_intervalAnt = Atack_Interval;
+        is_Atacking = false;
+        state = "NoA";
+        Not_beingAtacked = true;
+
     }
     public void recibe_Damague() { // es llamada desde el Damageable del player
         if (Not_beingAtacked && !is_Atacking) {

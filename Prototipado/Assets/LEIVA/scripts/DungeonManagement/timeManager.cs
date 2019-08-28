@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
 public class timeManager : MonoBehaviour
 {
     public float tiempo;
@@ -12,14 +11,21 @@ public class timeManager : MonoBehaviour
     float original;
     public float repanwtime = 3;
     public GameObject jugador;
+    public Text mooriste;
+    public Transform respan_point;
+    float vida_anterios;
+    float velAnt;
     // Start is called before the first frame update
     void Start()
     {
+        mooriste.gameObject.SetActive(false);
         jugador = GameObject.FindGameObjectWithTag("Player");
         player_script = GameObject.FindGameObjectWithTag("Player").GetComponent<Movimiento>();
         vida_player = player_script.my_life;
+        velAnt = player_script.get_vel();
         original = tiempo;
         Movimiento.Is_playable = true; // El game manager se encargara de eso luego
+        vida_anterios = player_script.get_life();
     }
 
 
@@ -33,16 +39,24 @@ public class timeManager : MonoBehaviour
                 vida_player = 0;
                 tiempo = original;
                 player_script.muerte();
-
+                mooriste.gameObject.SetActive(true);
             }
             Tiemp_ui.text = "Tiempo: " + tiempo;
+        }
+        else
+        {
+            StartCoroutine("espera");
         }
     }
     IEnumerator espera()
     {
         yield return new WaitForSeconds(repanwtime);
-
-        
+        jugador.transform.position = respan_point.position;
+        player_script.my_life = vida_anterios;
+        player_script.vel = velAnt;
+        Movimiento.Is_playable = true;
+        jugador.GetComponent<Animator>().SetTrigger("back");
+        jugador.GetComponent<ControlInput>().Reset();
     }
 
     public float time_rise;

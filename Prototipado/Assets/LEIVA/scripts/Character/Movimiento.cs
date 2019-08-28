@@ -97,10 +97,17 @@ public class Movimiento : MonoBehaviour
     public void muerte(){
         if (Movimiento.is_FPS == true) {
             SendMessage("cambia_camaras");
+            Movimiento.is_FPS = false;
         }
         Movimiento.Is_playable = false; // ya no se realiza ninguna accion
         animacion_FPS.SetTrigger("Is_Death");
         
    }
+    public float get_life() {
+        return my_life;
+    }
+    public float get_vel() {
+        return vel;
+    }
    
 }
