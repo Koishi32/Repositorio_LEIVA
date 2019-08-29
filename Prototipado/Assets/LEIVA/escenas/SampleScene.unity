@@ -35445,7 +35445,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8058197f75d6a814eb4df06dddd9717f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tiempo: 50
+  tiempo: 100
   Tiemp_ui: {fileID: 2019858092}
   player_script: {fileID: 730581882}
   repanwtime: 3
