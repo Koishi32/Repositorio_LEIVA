@@ -36,7 +36,7 @@ public class changeC : MonoBehaviour
         }
     }
     void Recive() {
-        if (Input.GetKeyDown(KeyCode.Q) && cambiando == false && RevisaI.vel != 0)
+        if ((Input.GetKeyDown(KeyCode.Q) || Input.GetMouseButtonDown(1)) && cambiando == false && RevisaI.vel != 0)
         {
             cambia_camaras();
         }

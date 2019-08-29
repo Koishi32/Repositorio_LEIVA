@@ -97965,6 +97965,16 @@ PrefabInstance:
       propertyPath: speed_rot
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 4097749200596595153, guid: 2524ecd3657fdd4479898956a5ac2731,
+        type: 3}
+      propertyPath: ANGLE_MAX
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4097749200596595153, guid: 2524ecd3657fdd4479898956a5ac2731,
+        type: 3}
+      propertyPath: ANGLE_MIN
+      value: -20
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2524ecd3657fdd4479898956a5ac2731, type: 3}
 --- !u!1001 &7422199052685220612

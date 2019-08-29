@@ -48,7 +48,7 @@ public class ControlInput : MonoBehaviour
    // public int Input_count;
     //Contar Inputs
     public void revisa_Input_Ataque() {
-        if (Input.GetKeyDown(KeyCode.E) && Movimiento.is_FPS == false) { // si se presiona e 
+        if ((Input.GetKeyDown(KeyCode.E) || Input.GetMouseButtonDown(0))&& Movimiento.is_FPS == false) { // si se presiona e 
             switch (state) {
                 case "NoA":
                     animacion_FPS.SetBool("Atack1",true); // Activa primera animacion de ataque
