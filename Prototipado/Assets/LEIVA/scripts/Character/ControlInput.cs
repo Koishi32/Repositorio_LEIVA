@@ -15,16 +15,12 @@ public class ControlInput : MonoBehaviour
     public string state;
     public GameObject efecto_arma;
     public static bool Not_beingAtacked;
+    float anterior;
+    public float Speed_Rise;
     // Start is called before the first frame update
     void Start()
     {
-        efecto_arma.SetActive(false);
-        Moviento_Personaje = GameObject.Find("Jugador").GetComponent<Movimiento>();
-        valor_anterior = Moviento_Personaje.get_vel();
-    //    Atack_intervalAnt = Atack_Interval;
-        is_Atacking = false;
-        state = "NoA";
-        Not_beingAtacked = true;
+        Reset();
     }
 
     // Update is called once per frame
@@ -33,9 +29,21 @@ public class ControlInput : MonoBehaviour
         if (Movimiento.Is_playable && Not_beingAtacked)
         {
             revisa_Input_Ataque();
+            onRun();
            // print(Moviento_Personaje.vel);
         }
        
+    }
+    public void onRun() {
+        
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            Moviento_Personaje.vel = valor_anterior * Speed_Rise;
+        }
+        else if (Input.GetKeyUp(KeyCode.LeftShift)){
+            Moviento_Personaje.vel = valor_anterior;
+        }
+        
     }
    // public int Input_count;
     //Contar Inputs
@@ -62,13 +70,16 @@ public class ControlInput : MonoBehaviour
     }
     public void Reset()
     {
-        state = "NoA";
+        animacion_FPS.SetBool("Atack1", false);
+        animacion_FPS.SetBool("Atack2", false);
+        animacion_FPS.SetBool("Atack3", false);
+        efecto_arma.SetActive(false);
+        Moviento_Personaje = GameObject.Find("Jugador").GetComponent<Movimiento>();
         valor_anterior = Moviento_Personaje.get_vel();
-        //    Atack_intervalAnt = Atack_Interval;
         is_Atacking = false;
         state = "NoA";
         Not_beingAtacked = true;
-
+    
     }
     public void recibe_Damague() { // es llamada desde el Damageable del player
         if (Not_beingAtacked && !is_Atacking) {
@@ -109,7 +120,7 @@ public class ControlInput : MonoBehaviour
     }
     IEnumerator espera2()
     {
-        print("waiting");
+        //print("waiting");
         yield return new WaitForSeconds(wait_painEnd); // Tiempo que espera para hacer otra animacion de dolor
         Not_beingAtacked = true;
     }

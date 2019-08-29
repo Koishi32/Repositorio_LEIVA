@@ -21,11 +21,11 @@ public class timeManager : MonoBehaviour
         mooriste.gameObject.SetActive(false);
         jugador = GameObject.FindGameObjectWithTag("Player");
         player_script = GameObject.FindGameObjectWithTag("Player").GetComponent<Movimiento>();
-        vida_player = player_script.my_life;
+       // vida_player = player_script.my_life;
         velAnt = player_script.get_vel();
         original = tiempo;
         Movimiento.Is_playable = true; // El game manager se encargara de eso luego
-        vida_anterios = player_script.get_life();
+        vida_anterios = player_script.my_life;
     }
 
 
@@ -36,14 +36,14 @@ public class timeManager : MonoBehaviour
             tiempo -= Time.deltaTime;
             if (tiempo <= 0)
             {
-                vida_player = 0;
-                tiempo = original;
+                player_script.my_life = 0;
+                //tiempo = original;
                 player_script.muerte();
                 mooriste.gameObject.SetActive(true);
             }
             Tiemp_ui.text = "Tiempo: " + tiempo;
         }
-        else
+        else if(tiempo>0)
         {
             StartCoroutine("espera");
         }
@@ -54,9 +54,11 @@ public class timeManager : MonoBehaviour
         jugador.transform.position = respan_point.position;
         player_script.my_life = vida_anterios;
         player_script.vel = velAnt;
-        Movimiento.Is_playable = true;
+        jugador.GetComponent<Animator>().ResetTrigger("Is_Hurt");
         jugador.GetComponent<Animator>().SetTrigger("back");
         jugador.GetComponent<ControlInput>().Reset();
+        jugador.GetComponent<Damageable>().lives = true;
+        Movimiento.Is_playable = true;
     }
 
     public float time_rise;

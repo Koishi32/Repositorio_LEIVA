@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 public class Movimiento : MonoBehaviour
 {
     //Variables para controlar la animacion y el rigid body
@@ -14,13 +13,16 @@ public class Movimiento : MonoBehaviour
     public float vel_jump;
     public float impulson; // fuerza añadida en tercer ataque
     public float my_life;
-    public Text miVidaUI;
+    public bool can_jump;
+    public BoxCollider zapatos;
     // Start is called before the first frame update
     void Start()
     {
         is_FPS = true;
         my_rigid = this.GetComponent<Rigidbody>();
         animacion_FPS.SetBool("Is_moving", false);
+        can_jump = true;
+        
     }
 
     // Update is called once per frame
@@ -31,15 +33,21 @@ public class Movimiento : MonoBehaviour
             se_mueve(); // pregunta si se recive input
             salta(); // add force para saltars
             rotea();
-            miVidaUI.text = "Vida: " + my_life;
         }
 
     }
 
     //Funcion para saltar solo añade fuerza
     public void salta() {
-        if (Input.GetKeyDown(KeyCode.Space)) { //Arreglar vectores movimineto
+        if (Input.GetKeyDown(KeyCode.Space) && can_jump) { //Arreglar vectores movimineto
+            can_jump = false;
             my_rigid.AddForce(Vector3.up * vel_jump, ForceMode.Impulse); // Da el salton
+        }
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.layer == 11) {
+            can_jump = true;
         }
     }
 
@@ -100,12 +108,13 @@ public class Movimiento : MonoBehaviour
             Movimiento.is_FPS = false;
         }
         Movimiento.Is_playable = false; // ya no se realiza ninguna accion
+        animacion_FPS.ResetTrigger("Is_Hurt");
         animacion_FPS.SetTrigger("Is_Death");
         
    }
-    public float get_life() {
+   /* public float get_life() {
         return my_life;
-    }
+    }*/
     public float get_vel() {
         return vel;
     }

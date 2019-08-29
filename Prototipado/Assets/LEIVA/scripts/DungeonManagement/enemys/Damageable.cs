@@ -6,13 +6,15 @@ public class Damageable : MonoBehaviour
 {
     public float vida;
     public float reciveDaño_tiempo;
-    public bool recive=true;
-    bool lives=true;
-    bool is_player=false;
+    public bool recive;
+    public bool lives;
+    bool is_player;
+
     public void Start()
     {
+        recive = true;
+        lives = true;
         if (this.gameObject.tag == "Player") {
-            vida = GetComponent<Movimiento>().my_life;
             is_player = true;
         }
     }
@@ -28,7 +30,7 @@ public class Damageable : MonoBehaviour
                         if (is_player && ControlInput.Not_beingAtacked)
                         { //Se asegura que solo recibe un daño por animación
                             SendMessage("recibe_Damague");
-                            vida -= amount;
+                           GetComponent<Movimiento>().my_life-=amount;
                         }
                         else if (!is_player){
                             vida -= amount;
@@ -41,17 +43,25 @@ public class Damageable : MonoBehaviour
 
             }
             checkLife();
+            checkLifeP();
         }
     
     }
 
     void checkLife() {
-        if (vida <= 0f)
+        if (!is_player && vida <= 0f)
         {
             Die();
         }
     }
-     bool DoDamage() // No puede recibir daño de la misma arma por medio seg.
+    void checkLifeP()
+    {
+        if (is_player && GetComponent<Movimiento>().my_life < 0f)
+        {
+            Die();
+        }
+    }
+    bool DoDamage() // No puede recibir daño de la misma arma por medio seg.
     {
         if (recive)
         {

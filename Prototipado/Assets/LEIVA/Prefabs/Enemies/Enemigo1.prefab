@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8757035875284634957}
   - component: {fileID: 9109016920272418113}
   - component: {fileID: 5293280978936301969}
+  - component: {fileID: 1750825170}
   m_Layer: 0
   m_Name: Palo
   m_TagString: Untagged
@@ -27,8 +28,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 35321741414089844}
   m_LocalRotation: {x: 0.57427084, y: 0.46909606, z: 0.4933881, w: 0.45467573}
-  m_LocalPosition: {x: 0.116, y: -0.059, z: 0.236}
-  m_LocalScale: {x: 0.03037624, y: 0.2810576, z: 0.03037624}
+  m_LocalPosition: {x: 0.107, y: -0.043, z: 0.128}
+  m_LocalScale: {x: 0.03037624, y: 0.63555914, z: 0.03037624}
   m_Children: []
   m_Father: {fileID: 4932134668507429038}
   m_RootOrder: 5
@@ -92,6 +93,23 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+--- !u!114 &1750825170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 35321741414089844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c279abc34c932d4d8a01f44348a536f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 5
+  ataca_meele: 0
+  impactforce: 1
+  Nombre_Objetivo: Player
+  CharaForzeDir: {fileID: 0}
 --- !u!1 &4932134668507128960
 GameObject:
   m_ObjectHideFlags: 0
@@ -1900,13 +1918,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   patrolTime: 10
   aggroRange: 8
-  atackRange: 1
+  atackRange: 1.1
   waypoints:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  Atack_Interval: 0.8
+  Atack_Interval: 2
   agentSpeed: 0
+  is_atacking: 0
+  canHarm: 0
+  HarmTime: 0.2
 --- !u!114 &3350492882348185647
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -85,6 +85,7 @@ public class NPCcontroller : MonoBehaviour
     { 
             yield return new WaitForSeconds(Atack_Interval); // Tiempo que espera para continuar 
             is_atacking = false;
+            
     }
     private void OnDrawGizmos() { 
     Gizmos.color = Color.red;

@@ -10,6 +10,7 @@ public class Se_danmagea : Damageable
     public float plus_Distancia;
     public float plus_life;
     public string A_modificar;
+    public float speed_rot;
     public override void Die()
     {
         switch (A_modificar)
@@ -25,5 +26,9 @@ public class Se_danmagea : Damageable
                 break;
         }
         Destroy(this.gameObject);
+    }
+    private void Update()
+    {
+        transform.Rotate(Vector3.up, speed_rot * Time.deltaTime,Space.World);
     }
 }
