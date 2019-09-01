@@ -23771,7 +23771,7 @@ PrefabInstance:
     - target: {fileID: 4932134668507429236, guid: 50a760688e03d184c95a0a66625ce3a8,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -205.3
+      value: -106.899994
       objectReference: {fileID: 0}
     - target: {fileID: 4932134668507429236, guid: 50a760688e03d184c95a0a66625ce3a8,
         type: 3}
@@ -23781,7 +23781,7 @@ PrefabInstance:
     - target: {fileID: 4932134668507429236, guid: 50a760688e03d184c95a0a66625ce3a8,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -13.6
+      value: -5
       objectReference: {fileID: 0}
     - target: {fileID: 4932134668507429236, guid: 50a760688e03d184c95a0a66625ce3a8,
         type: 3}
@@ -30327,46 +30327,6 @@ PrefabInstance:
       propertyPath: waypoints.Array.data[2]
       value: 
       objectReference: {fileID: 1637136104}
-    - target: {fileID: 4773585795393702970, guid: 50a760688e03d184c95a0a66625ce3a8,
-        type: 3}
-      propertyPath: HarmTime
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4773585795393702970, guid: 50a760688e03d184c95a0a66625ce3a8,
-        type: 3}
-      propertyPath: atackRange
-      value: 1.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4773585795393702970, guid: 50a760688e03d184c95a0a66625ce3a8,
-        type: 3}
-      propertyPath: Atack_Interval
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3350492882348185647, guid: 50a760688e03d184c95a0a66625ce3a8,
-        type: 3}
-      propertyPath: "reciveDa\xF1o_tiempo"
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5624694165938211115, guid: 50a760688e03d184c95a0a66625ce3a8,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.63555914
-      objectReference: {fileID: 0}
-    - target: {fileID: 5624694165938211115, guid: 50a760688e03d184c95a0a66625ce3a8,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.107
-      objectReference: {fileID: 0}
-    - target: {fileID: 5624694165938211115, guid: 50a760688e03d184c95a0a66625ce3a8,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.043
-      objectReference: {fileID: 0}
-    - target: {fileID: 5624694165938211115, guid: 50a760688e03d184c95a0a66625ce3a8,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.128
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 50a760688e03d184c95a0a66625ce3a8, type: 3}
 --- !u!4 &941530473 stripped
@@ -30375,29 +30335,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 941530472}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &941530474 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 35321741414089844, guid: 50a760688e03d184c95a0a66625ce3a8,
-    type: 3}
-  m_PrefabInstance: {fileID: 941530472}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &941530475
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 941530474}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6c279abc34c932d4d8a01f44348a536f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 5
-  ataca_meele: 0
-  impactforce: 1
-  Nombre_Objetivo: Player
-  CharaForzeDir: {fileID: 0}
 --- !u!1 &962970213
 GameObject:
   m_ObjectHideFlags: 0
@@ -35270,7 +35207,7 @@ PrefabInstance:
     - target: {fileID: 4932134668507429236, guid: 50a760688e03d184c95a0a66625ce3a8,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -39.3
+      value: -75.899994
       objectReference: {fileID: 0}
     - target: {fileID: 4932134668507429236, guid: 50a760688e03d184c95a0a66625ce3a8,
         type: 3}
@@ -35280,7 +35217,7 @@ PrefabInstance:
     - target: {fileID: 4932134668507429236, guid: 50a760688e03d184c95a0a66625ce3a8,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 83.3
+      value: -3
       objectReference: {fileID: 0}
     - target: {fileID: 4932134668507429236, guid: 50a760688e03d184c95a0a66625ce3a8,
         type: 3}
@@ -35445,7 +35382,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8058197f75d6a814eb4df06dddd9717f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tiempo: 50
+  tiempo: 500
   Tiemp_ui: {fileID: 2019858092}
   player_script: {fileID: 730581882}
   repanwtime: 3
@@ -97984,10 +97921,20 @@ PrefabInstance:
       propertyPath: damage
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 7422199052463820367, guid: ac7a2b862aeed654e94e905ecaa78e80,
+        type: 3}
+      propertyPath: impactforce
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 7422199052608648431, guid: ac7a2b862aeed654e94e905ecaa78e80,
         type: 3}
       propertyPath: damage
       value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 7422199052608648431, guid: ac7a2b862aeed654e94e905ecaa78e80,
+        type: 3}
+      propertyPath: impactforce
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6606789409268336063, guid: ac7a2b862aeed654e94e905ecaa78e80,
         type: 3}

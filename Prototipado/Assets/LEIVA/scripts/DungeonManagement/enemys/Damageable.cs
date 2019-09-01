@@ -30,9 +30,15 @@ public class Damageable : MonoBehaviour
                         if (is_player && ControlInput.Not_beingAtacked)
                         { //Se asegura que solo recibe un daño por animación
                             SendMessage("recibe_Damague");
-                           GetComponent<Movimiento>().my_life-=amount;
+                            GetComponent<Movimiento>().my_life -= amount;
                         }
-                        else if (!is_player){
+                        else if (!is_player && this.tag == "Enemy")
+                        {
+                            SendMessage("cancelar_acciones", false);
+                            vida -= amount;
+
+                        }
+                        else {
                             vida -= amount;
                         }
                     }
@@ -83,9 +89,7 @@ public class Damageable : MonoBehaviour
     public virtual void Die() {
         lives = false;
         if (this.tag == "Enemy") {
-            SendMessage("cancelar_acciones");
-            trigger_deaht = this.GetComponent<Animator>();
-            trigger_deaht.SetTrigger("Is_Death"); //Asegurar que todas las trigger de enemigos sean Is_Death
+            SendMessage("cancelar_acciones",true);
         }else if(is_player)
         {
             SendMessage("muerte");

@@ -110,8 +110,8 @@ public class Movimiento : MonoBehaviour
         Movimiento.Is_playable = false; // ya no se realiza ninguna accion
         animacion_FPS.ResetTrigger("Is_Hurt");
         animacion_FPS.SetTrigger("Is_Death");
-        
-   }
+        animacion_FPS.ResetTrigger("Is_Hurt");
+    }
    /* public float get_life() {
         return my_life;
     }*/

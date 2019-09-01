@@ -36,7 +36,7 @@ public class timeManager : MonoBehaviour
             tiempo -= Time.deltaTime;
             if (tiempo <= 0)
             {
-                player_script.my_life = 0;
+               // player_script.my_life = 0;
                 //tiempo = original;
                 player_script.muerte();
                 mooriste.gameObject.SetActive(true);
@@ -58,6 +58,7 @@ public class timeManager : MonoBehaviour
         jugador.GetComponent<Animator>().SetTrigger("back");
         jugador.GetComponent<ControlInput>().Reset();
         jugador.GetComponent<Damageable>().lives = true;
+        jugador.GetComponent<Damageable>().vida = vida_anterios;
         Movimiento.Is_playable = true;
     }
 

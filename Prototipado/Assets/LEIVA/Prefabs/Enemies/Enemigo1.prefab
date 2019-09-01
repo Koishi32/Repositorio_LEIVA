@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 9109016920272418113}
   - component: {fileID: 5293280978936301969}
   - component: {fileID: 1750825170}
+  - component: {fileID: 941530475}
   m_Layer: 0
   m_Name: Palo
   m_TagString: Untagged
@@ -94,6 +95,23 @@ CapsuleCollider:
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
 --- !u!114 &1750825170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 35321741414089844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c279abc34c932d4d8a01f44348a536f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 5
+  ataca_meele: 0
+  impactforce: 1
+  Nombre_Objetivo: Player
+  CharaForzeDir: {fileID: 0}
+--- !u!114 &941530475
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1928,6 +1946,8 @@ MonoBehaviour:
   is_atacking: 0
   canHarm: 0
   HarmTime: 0.2
+  canBeHarm: 0
+  atack_recovery_time: 0.3
 --- !u!114 &3350492882348185647
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1943,6 +1963,7 @@ MonoBehaviour:
   vida: 110
   "reciveDa\xF1o_tiempo": 0.5
   recive: 1
+  lives: 0
 --- !u!136 &1857791298828008880
 CapsuleCollider:
   m_ObjectHideFlags: 0

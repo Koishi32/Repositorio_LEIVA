@@ -26,12 +26,13 @@ public class MeeleGun : MonoBehaviour
             Damageable target = collision.transform.GetComponent<Damageable>();
             if (target != null)
             {
+                float tempImpactforze = impactforce;
                 target.takeDamage(damage, "Meele"); // Si el objeto golpeado por el arma Meele
                 if (collision.attachedRigidbody.velocity.magnitude == 0) { //si esta quieto
-                    float tempImpactforze = impactforce / 2; //Reduce impacto entre dos para asegurar que no salga volando
+                    tempImpactforze = impactforce / 2; //Reduce impacto entre dos para asegurar que no salga volando
                 }
                 if (collision.gameObject.GetComponent<Rigidbody>()) {
-                    collision.gameObject.GetComponent<Rigidbody>().AddForce(CharaForzeDir.transform.forward.normalized * impactforce, ForceMode.Impulse);
+                    collision.gameObject.GetComponent<Rigidbody>().AddForce(CharaForzeDir.transform.forward.normalized * tempImpactforze, ForceMode.Impulse);
                 }
 
             }

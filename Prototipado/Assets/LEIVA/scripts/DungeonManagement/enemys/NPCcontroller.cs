@@ -33,7 +33,7 @@ public class NPCcontroller : MonoBehaviour
         index = Random.Range(0,waypoints.Length);
         normalSPEED = agentSpeed;
         InvokeRepeating("Tick", 0, 0.5f);
-
+        canBeHarm = true;
         if (waypoints.Length > 0) {
             InvokeRepeating("Patrol", Random.Range(0, patrolTime), patrolTime);
         }
@@ -54,7 +54,7 @@ public class NPCcontroller : MonoBehaviour
         }
     }
     IEnumerator espera2() {
-        yield return new WaitForSeconds(HarmTime);
+        yield return new WaitForSeconds(HarmTime); //Evita que el jugador haga la animacion de dolor antes de recibir el golpe
         canHarm = true;
     }
     public void revert() {
@@ -76,14 +76,40 @@ public class NPCcontroller : MonoBehaviour
            
         }
     }
-    public void cancelar_acciones() {
+    public bool canBeHarm;
+    public float atack_recovery_time;
+    public void cancelar_acciones(bool willDie) {
         can_do = false;
-        agent.isStopped = true;
-        CancelInvoke();
+        if (willDie)
+        {
+            agent.isStopped = true;
+            CancelInvoke();
+            mis_animaciones.SetTrigger("Is_Death");
+        }
+        else if(canBeHarm){
+            canBeHarm = false;
+            mis_animaciones.SetTrigger("Is_Hurt");
+            mis_animaciones.SetBool("Atack1", false);
+            canHarm = false;
+            agentSpeed = 0;
+        }
+     
+    }
+    public void restaurar() {
+        can_do = true; //Restaura velocidad y sigue con sus actividades nomales
+        agentSpeed = normalSPEED;
+        StartCoroutine("espera3");
+
+    }
+    IEnumerator espera3()
+    {
+        yield return new WaitForSeconds(atack_recovery_time); // Tiempo que espera para continuar atacando
+        canBeHarm = true;
+
     }
     IEnumerator espera()
     { 
-            yield return new WaitForSeconds(Atack_Interval); // Tiempo que espera para continuar 
+            yield return new WaitForSeconds(Atack_Interval); // Tiempo que espera para continuar atacando
             is_atacking = false;
             
     }
