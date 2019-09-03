@@ -17,6 +17,7 @@ public class ControlInput : MonoBehaviour
     public static bool Not_beingAtacked;
     float anterior;
     public float Speed_Rise;
+	private bool animCorrerFast = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,6 +32,7 @@ public class ControlInput : MonoBehaviour
             revisa_Input_Ataque();
             onRun();
            // print(Moviento_Personaje.vel);
+
         }
        
     }
@@ -39,16 +41,29 @@ public class ControlInput : MonoBehaviour
         if (Input.GetKey(KeyCode.LeftShift))
         {
             Moviento_Personaje.vel = valor_anterior * Speed_Rise;
-        }
-        else if (Input.GetKeyUp(KeyCode.LeftShift)){
+			//activa bandera para aumentar velocidad animacion
+			animCorrerFast = true;
+
+		}
+		else if (Input.GetKeyUp(KeyCode.LeftShift)){
             Moviento_Personaje.vel = valor_anterior;
-        }
+			//desactiva bandera para regresar velocidad animacion
+			animCorrerFast = false;
+		}
+		//cambia velocidad de animacion
+		if (animCorrerFast && (animacion_FPS.GetCurrentAnimatorStateInfo(0).IsName("Walk_FPS") || animacion_FPS.GetCurrentAnimatorStateInfo(0).IsName("Walk_TerceraP")))
+		{
+			animacion_FPS.speed = 2.0f;
+
+		} else {
+			animacion_FPS.speed = 1.0f;
+		}
         
     }
    // public int Input_count;
     //Contar Inputs
     public void revisa_Input_Ataque() {
-        if (Input.GetKeyDown(KeyCode.E) && Movimiento.is_FPS == false) { // si se presiona e 
+        if ((Input.GetKeyDown(KeyCode.E) || Input.GetMouseButtonDown(0))&& Movimiento.is_FPS == false) { // si se presiona e 
             switch (state) {
                 case "NoA":
                     animacion_FPS.SetBool("Atack1",true); // Activa primera animacion de ataque

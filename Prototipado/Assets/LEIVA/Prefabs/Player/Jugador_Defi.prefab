@@ -7549,12 +7549,12 @@ PrefabInstance:
     - target: {fileID: 3993717268510323182, guid: 48dec072517685c4fbe4ba403da4bd4f,
         type: 3}
       propertyPath: ANGLE_MIN_FPS
-      value: -10
+      value: -50
       objectReference: {fileID: 0}
     - target: {fileID: 3993717268510323182, guid: 48dec072517685c4fbe4ba403da4bd4f,
         type: 3}
       propertyPath: ANGLE_MAX_FPS
-      value: 30
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 3993717268510323182, guid: 48dec072517685c4fbe4ba403da4bd4f,
         type: 3}

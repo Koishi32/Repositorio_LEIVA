@@ -5552,7 +5552,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh13530
+  m_Name: pb_Mesh13546
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -10495,7 +10495,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh13334
+  m_Name: pb_Mesh13346
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -10713,7 +10713,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -315, y: 133.79999}
+  m_AnchoredPosition: {x: -251, y: 192.1}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &213969405
@@ -23626,7 +23626,7 @@ MonoBehaviour:
   m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -23945,7 +23945,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh13628
+  m_Name: pb_Mesh13644
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -24175,7 +24175,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -194.20001, y: -100.00001}
+  m_AnchoredPosition: {x: -161, y: -33}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &577434357
@@ -35189,7 +35189,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -346, y: -105}
+  m_AnchoredPosition: {x: -484, y: -98}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &992775061
@@ -35382,7 +35382,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8058197f75d6a814eb4df06dddd9717f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tiempo: 500
+  tiempo: 100
   Tiemp_ui: {fileID: 2019858092}
   player_script: {fileID: 730581882}
   repanwtime: 3
@@ -48649,7 +48649,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh13290
+  m_Name: pb_Mesh13302
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -66962,7 +66962,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -194, y: -136}
+  m_AnchoredPosition: {x: -160.80002, y: -69}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1526098731
@@ -67041,7 +67041,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -346, y: -105}
+  m_AnchoredPosition: {x: -484, y: -0.0000038146973}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1539295708
@@ -87220,7 +87220,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh13466
+  m_Name: pb_Mesh13478
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -92376,7 +92376,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 270, y: 126.9}
+  m_AnchoredPosition: {x: 324, y: 229}
   m_SizeDelta: {x: 267.55, y: 43.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2019858092
@@ -97901,6 +97901,16 @@ PrefabInstance:
         type: 3}
       propertyPath: speed_rot
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4097749200596595153, guid: 2524ecd3657fdd4479898956a5ac2731,
+        type: 3}
+      propertyPath: ANGLE_MAX
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4097749200596595153, guid: 2524ecd3657fdd4479898956a5ac2731,
+        type: 3}
+      propertyPath: ANGLE_MIN
+      value: -20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2524ecd3657fdd4479898956a5ac2731, type: 3}
