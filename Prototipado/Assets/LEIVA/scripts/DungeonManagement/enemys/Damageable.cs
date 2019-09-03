@@ -34,7 +34,7 @@ public class Damageable : MonoBehaviour
                         }
                         else if (!is_player && this.tag == "Enemy")
                         {
-                            SendMessage("cancelar_acciones", false);
+                            SendMessage("cancelar_acciones", false); //daña pero no muere
                             vida -= amount;
 
                         }
@@ -73,9 +73,9 @@ public class Damageable : MonoBehaviour
         {
             recive = false;
             StartCoroutine("espera");
-            return true;
+            return true;// Puede volver a dañar
         }
-        return false;
+        return false; //No puede dañar otra vez
     }
 
     IEnumerator espera()
@@ -89,8 +89,9 @@ public class Damageable : MonoBehaviour
     public virtual void Die() {
         lives = false;
         if (this.tag == "Enemy") {
-            SendMessage("cancelar_acciones",true);
-        }else if(is_player)
+            SendMessage("cancelar_acciones",true); //daña y muere
+        }
+        else if(is_player)
         {
             SendMessage("muerte");
         }
