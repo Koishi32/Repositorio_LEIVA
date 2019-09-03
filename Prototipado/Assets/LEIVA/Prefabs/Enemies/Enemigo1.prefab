@@ -1945,6 +1945,7 @@ MonoBehaviour:
   is_atacking: 0
   canHarm: 0
   HarmTime: 0.2
+  opcion: 0
   Persuit_Vel_Reduction: 1.5
   canBeHarm: 0
   atack_recovery_time: 0.3

@@ -54,21 +54,24 @@ public class NPCcontroller : MonoBehaviour
         if (Movimiento.Is_playable && Vector3.Distance(transform.position, player.position) < atackRange && !is_atacking) {
             agent.speed = 0;
             is_atacking = true;
-            mis_animaciones.SetBool("Atack1", true); // Inicia ataque
+            //mis_animaciones.SetBool("Atack1", true); // Inicia ataque
+            elegir_atack();
             StartCoroutine("espera2"); //Countdown para permitir daño al jugador
         } else if (Vector3.Distance(transform.position, player.position) > atackRange) {
             agent.speed = normalSPEED;
         }
     }
+    public float opcion;
     void elegir_atack() { // se pueden meter mas cases para mas animaciones
-        float opcion =Mathf.RoundToInt( Random.Range(0, 1));
+        opcion = Mathf.RoundToInt( Random.Range(0,2));
+        print(opcion);
         switch (opcion) {
             case 0:
-                //ani1 
-            break;
+                mis_animaciones.SetBool("Atack1", true);
+                break;
             case 1:
-                //ani2 solo necesitan lanzar el evento restaurar
-            break;
+                mis_animaciones.SetBool("Atack2", true);
+                break;
         }
     }
     IEnumerator espera2() {
@@ -76,10 +79,19 @@ public class NPCcontroller : MonoBehaviour
         canHarm = true; // el jugador puede recibir daño
     }
     public void revert() { //Acaba la animacion de ataque 
-        mis_animaciones.SetBool("Atack1", false);
+        switch (opcion) //esta asi para permitir mas ataque en el futuro
+        {
+            case 0:
+                mis_animaciones.SetBool("Atack1", false);
+                break;
+            case 1:
+                mis_animaciones.SetBool("Atack2", false);
+                break;
+        }
         canHarm = false;
         StartCoroutine("espera");//Espera antes de que de otro golpe
     }
+
     IEnumerator espera()
     {
         yield return new WaitForSeconds(Atack_Interval); // Tiempo que espera para continuar atacando
@@ -120,7 +132,7 @@ public class NPCcontroller : MonoBehaviour
             mis_animaciones.SetTrigger("Is_Death"); //Al finalizar la animacion le indicara a dameageable que muera
         }
         else if(canBeHarm){
-            canBeHarm = false;
+            canBeHarm = true;
             canHarm = false;
             mis_animaciones.SetBool("Atack1", false);
             mis_animaciones.SetTrigger("Is_Hurt"); //toca la animacion de lastimado

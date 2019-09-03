@@ -9,7 +9,7 @@ public class Damageable : MonoBehaviour
     public bool recive;
     public bool lives;
     bool is_player;
-
+    // Recordar hacer este script hederable por el amor de dios 
     public void Start()
     {
         recive = true;
@@ -34,7 +34,7 @@ public class Damageable : MonoBehaviour
                         }
                         else if (!is_player && this.tag == "Enemy")
                         {
-                            SendMessage("cancelar_acciones", false); //daña pero no muere
+                            SendMessage("cancelar_acciones", false); //daña pero no muere permite stun
                             vida -= amount;
 
                         }
