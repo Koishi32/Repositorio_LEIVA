@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 500bb914a334b8d41be022df8bf97d9d
+guid: e26e03ae55414a34bbfa8ba1b12ad10d
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -139,7 +139,7 @@ ModelImporter:
     400130: mixamorig:Spine1
     400132: mixamorig:Spine2
     400134: //RootNode
-    7400000: AtaqueEne01
+    7400000: BossAtack3
     9500000: //RootNode
   externalObjects: {}
   materials:
@@ -161,7 +161,7 @@ ModelImporter:
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
     importConstraints: 0
-    animationCompression: 1
+    animationCompression: 3
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
@@ -170,10 +170,10 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: AtaqueEne01
+      name: BossAtack3
       takeName: mixamo.com
       firstFrame: 0
-      lastFrame: 30
+      lastFrame: 41
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -181,7 +181,7 @@ ModelImporter:
       loop: 0
       hasAdditiveReferencePose: 0
       loopTime: 0
-      loopBlend: 0
+      loopBlend: 1
       loopBlendOrientation: 0
       loopBlendPositionY: 0
       loopBlendPositionXZ: 0
@@ -193,10 +193,10 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 1
+      - time: 0.8272015
         functionName: revert
         data: 
-        objectReferenceParameter: {fileID: 11500000, guid: c9cb06ef250bff642872385bd8a15f7b,
+        objectReferenceParameter: {fileID: 11500000, guid: a6ca3686a36dcf647ab60d0db4bd0522,
           type: 3}
         floatParameter: 0
         intParameter: 0
@@ -254,7 +254,7 @@ ModelImporter:
     feetSpacing: 0
     rootMotionBoneName: 
     hasTranslationDoF: 0
-    hasExtraRoot: 0
+    hasExtraRoot: 1
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   animationType: 2

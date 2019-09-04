@@ -1942,13 +1942,19 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   Atack_Interval: 2
+  mis_animaciones: {fileID: 0}
   is_atacking: 0
   canHarm: 0
   HarmTime: 0.2
+  normalSPEED: 0
+  index: 0
+  can_do: 1
+  player: {fileID: 0}
+  Velocidad_agente: 1
   opcion: 0
   Persuit_Vel_Reduction: 1.5
   canBeHarm: 0
-  atack_recovery_time: 0.3
+  atack_recovery_time: 0.5
 --- !u!114 &3350492882348185647
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -193,7 +193,7 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 0.919346
+      - time: 0.82873106
         functionName: restaurar
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: c9cb06ef250bff642872385bd8a15f7b,

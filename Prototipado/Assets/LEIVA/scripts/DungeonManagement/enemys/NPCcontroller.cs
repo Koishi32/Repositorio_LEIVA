@@ -10,15 +10,15 @@ public class NPCcontroller : MonoBehaviour
     public float atackRange;
     public Transform[] waypoints;
     public float Atack_Interval;
-    Animator mis_animaciones;
+    public Animator mis_animaciones;
     public bool is_atacking;
     public bool canHarm;
     public float HarmTime;
-    float normalSPEED;
-    int index;
-    bool can_do=true; // Permite que el Enemigo haga lo que sea , usar para muerte 
-    Transform player;
-    
+    public float normalSPEED;
+    public int index;
+    public bool can_do=true; // Permite que el Enemigo haga lo que sea , usar para muerte 
+    public Transform player;
+    public float Velocidad_agente;
     NavMeshAgent agent;
 
     private void Start() {
@@ -29,6 +29,7 @@ public class NPCcontroller : MonoBehaviour
         is_atacking = false;
         player = GameObject.FindGameObjectWithTag("Player").transform;
         index = Random.Range(0, waypoints.Length);
+        agent.speed *= Velocidad_agente;
         normalSPEED = get_Agent_Speed();
         invocando();
         canBeHarm = true;
@@ -55,14 +56,14 @@ public class NPCcontroller : MonoBehaviour
             agent.speed = 0;
             is_atacking = true;
             //mis_animaciones.SetBool("Atack1", true); // Inicia ataque
-            elegir_atack();
+            elegir_atack(); // elide que ataque va  a hacer
             StartCoroutine("espera2"); //Countdown para permitir daño al jugador
         } else if (Vector3.Distance(transform.position, player.position) > atackRange) {
             agent.speed = normalSPEED;
         }
     }
     public float opcion;
-    void elegir_atack() { // se pueden meter mas cases para mas animaciones
+    public virtual void elegir_atack() { // se pueden meter mas cases para mas animaciones
         opcion = Mathf.RoundToInt( Random.Range(0,2));
         print(opcion);
         switch (opcion) {
@@ -78,7 +79,7 @@ public class NPCcontroller : MonoBehaviour
         yield return new WaitForSeconds(HarmTime); //Evita que el jugador haga la animacion de dolor antes de recibir el golpe
         canHarm = true; // el jugador puede recibir daño
     }
-    public void revert() { //Acaba la animacion de ataque 
+    public virtual void revert() { //Acaba la animacion de ataque 
         switch (opcion) //esta asi para permitir mas ataque en el futuro
         {
             case 0:
@@ -155,7 +156,7 @@ public class NPCcontroller : MonoBehaviour
 
     IEnumerator espera3()
     {
-        yield return new WaitForSeconds(atack_recovery_time); // Tiempo que espera para continuar atacando
+        yield return new WaitForSeconds(atack_recovery_time); // Tiempo que espera para hacer otra animacion de dolor
         canBeHarm = true;
 
     }

@@ -32,13 +32,14 @@ public class timeManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Movimiento.Is_playable == true) {
+        if (Movimiento.Is_playable) {
             tiempo -= Time.deltaTime;
             if (tiempo <= 0)
             {
                // player_script.my_life = 0;
                 //tiempo = original;
                 player_script.muerte();
+                jugador.GetComponent<Animator>().ResetTrigger("back");
                 mooriste.gameObject.SetActive(true);
             }
             Tiemp_ui.text = "Tiempo: " + tiempo;
