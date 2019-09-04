@@ -1,0 +1,502 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{E3CC09DF-B68E-452A-AD1F-3FBD337828C7}" SchemaVersion="94">
+	<AudioObjects>
+		<WorkUnit Name="Default Work Unit" ID="{E3CC09DF-B68E-452A-AD1F-3FBD337828C7}" PersistMode="Standalone">
+			<ChildrenList>
+				<Sound Name="apugnalamiento" ID="{03126560-4385-4E2B-BCC6-DDA10EDB2E12}" ShortID="788486544">
+					<PropertyList>
+						<Property Name="Pitch" Type="int32">
+							<ValueList>
+								<Value>-350</Value>
+							</ValueList>
+						</Property>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-4</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{27FC5808-F95D-452C-8821-197CCF71A1B7}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{38F3581C-7869-431B-B6B2-F3530F3C1FFB}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="apugnalamiento" ID="{D6194E6B-CEC3-4112-8FD0-5AB1C890040A}" ShortID="60036439">
+							<PropertyList>
+								<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+								<Property Name="TrimBegin" Type="Real64" Value="0.156864350755976"/>
+								<Property Name="TrimEnd" Type="Real64" Value="0.782143082241605"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>apugnalamiento.wav</AudioFile>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="apugnalamiento" ID="{D6194E6B-CEC3-4112-8FD0-5AB1C890040A}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="blast" ID="{273DEB50-2BFF-419C-B666-CF525205EDD5}" ShortID="132781332">
+					<PropertyList>
+						<Property Name="Pitch" Type="int32">
+							<ValueList>
+								<Value>810</Value>
+							</ValueList>
+						</Property>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-14</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{27FC5808-F95D-452C-8821-197CCF71A1B7}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{38F3581C-7869-431B-B6B2-F3530F3C1FFB}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="blast" ID="{8FD426ED-0E2B-4D04-A56A-B9D4820487E3}" ShortID="219378916">
+							<Language>SFX</Language>
+							<AudioFile>blast.wav</AudioFile>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="blast" ID="{8FD426ED-0E2B-4D04-A56A-B9D4820487E3}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="brillos" ID="{043B2E9D-0148-44BE-9ECD-0DB80F64A481}" ShortID="572819844">
+					<PropertyList>
+						<Property Name="Pitch" Type="int32">
+							<ValueList>
+								<Value>-430</Value>
+							</ValueList>
+						</Property>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-19</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{27FC5808-F95D-452C-8821-197CCF71A1B7}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{38F3581C-7869-431B-B6B2-F3530F3C1FFB}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="brillos" ID="{0B2DC53E-9795-4B9A-9075-E8AB03AFCE88}" ShortID="253615202">
+							<PropertyList>
+								<Property Name="FadeInDuration" Type="Real64" Value="9.41172456443393E-02"/>
+								<Property Name="FadeOutDuration" Type="Real64" Value="0.831369003191663"/>
+								<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+								<Property Name="TrimBegin" Type="Real64" Value="0.135947132597379"/>
+								<Property Name="TrimEnd" Type="Real64" Value="2.01306330961504"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>brillos.wav</AudioFile>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="brillos" ID="{0B2DC53E-9795-4B9A-9075-E8AB03AFCE88}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="disparo" ID="{C2C9B1F6-6B6D-4E27-8A77-921451E1DB3C}" ShortID="55056028">
+					<PropertyList>
+						<Property Name="Pitch" Type="int32">
+							<ValueList>
+								<Value>-1390</Value>
+							</ValueList>
+						</Property>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-13</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{27FC5808-F95D-452C-8821-197CCF71A1B7}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{38F3581C-7869-431B-B6B2-F3530F3C1FFB}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="disparo" ID="{ACBBC6E8-8A10-4814-9F57-4C34B8338088}" ShortID="993342703">
+							<PropertyList>
+								<Property Name="FadeInDuration" Type="Real64" Value="3.45175896900035E-02"/>
+								<Property Name="FadeOutDuration" Type="Real64" Value="0.276140717520028"/>
+								<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+								<Property Name="TrimEnd" Type="Real64" Value="0.333094740508533"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>disparo.wav</AudioFile>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="disparo" ID="{ACBBC6E8-8A10-4814-9F57-4C34B8338088}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="tomaItem" ID="{4B30B79C-870E-41AF-BDF1-3172E6FB49FB}" ShortID="125682889">
+					<PropertyList>
+						<Property Name="Pitch" Type="int32">
+							<ValueList>
+								<Value>-1970</Value>
+							</ValueList>
+						</Property>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-14</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{27FC5808-F95D-452C-8821-197CCF71A1B7}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{38F3581C-7869-431B-B6B2-F3530F3C1FFB}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="tomaItem" ID="{175CA593-121F-41EA-9639-7E79D7D79F17}" ShortID="727328506">
+							<Language>SFX</Language>
+							<AudioFile>tomaItem.wav</AudioFile>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="tomaItem" ID="{175CA593-121F-41EA-9639-7E79D7D79F17}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<RandomSequenceContainer Name="pisadas" ID="{8F53309D-8481-49FA-9BAF-9128E9446AA1}" ShortID="746298334">
+					<PropertyList>
+						<Property Name="Pitch" Type="int32">
+							<ValueList>
+								<Value>-180</Value>
+							</ValueList>
+						</Property>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-3</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{27FC5808-F95D-452C-8821-197CCF71A1B7}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{38F3581C-7869-431B-B6B2-F3530F3C1FFB}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="pasos" ID="{FF5424B4-7E3E-46C0-BCA3-1CC57DE9F871}" ShortID="234949256">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{27FC5808-F95D-452C-8821-197CCF71A1B7}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{38F3581C-7869-431B-B6B2-F3530F3C1FFB}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="pasos" ID="{EFD1A164-A1E2-463A-B937-7BBD396A095B}" ShortID="999954140">
+									<PropertyList>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="16.0757995425471"/>
+										<Property Name="TrimEnd" Type="Real64" Value="16.7247257873492"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>pasos.wav</AudioFile>
+									<ConvertedFileIDList>
+										<File ID="18000142"/>
+									</ConvertedFileIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="pasos" ID="{EFD1A164-A1E2-463A-B937-7BBD396A095B}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="pasos_01" ID="{4BEACA96-B5E7-4220-A3C3-4370A9E1BA13}" ShortID="288643176">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{27FC5808-F95D-452C-8821-197CCF71A1B7}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{38F3581C-7869-431B-B6B2-F3530F3C1FFB}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="pasos" ID="{07E4AC3F-BF80-4624-A040-0D2B1B38ED73}" ShortID="385914723">
+									<PropertyList>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="33.0651070877672"/>
+										<Property Name="TrimEnd" Type="Real64" Value="33.8553423515"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>pasos.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="pasos" ID="{07E4AC3F-BF80-4624-A040-0D2B1B38ED73}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="pasos_02" ID="{5AE506A3-582C-44B3-BFC7-EF59A75E0A9F}" ShortID="686325337">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{27FC5808-F95D-452C-8821-197CCF71A1B7}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{38F3581C-7869-431B-B6B2-F3530F3C1FFB}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="pasos" ID="{A4F9C3E7-3AD4-4FFE-A983-82F1D1B86BD5}" ShortID="518698751">
+									<PropertyList>
+										<Property Name="LoopBegin" Type="Real64" Value="4.40868094503563"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="4.40868094503563"/>
+										<Property Name="TrimEnd" Type="Real64" Value="5.36528152744902"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>pasos.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="pasos" ID="{A4F9C3E7-3AD4-4FFE-A983-82F1D1B86BD5}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="pasos_03" ID="{D0D0E776-EEB6-4699-97C1-36D9FF76FB16}" ShortID="264899381">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{27FC5808-F95D-452C-8821-197CCF71A1B7}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{38F3581C-7869-431B-B6B2-F3530F3C1FFB}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="pasos" ID="{285770DE-0FC6-4AC1-87E2-AD232FDD9099}" ShortID="18000142">
+									<PropertyList>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="26.6600423185645"/>
+										<Property Name="TrimEnd" Type="Real64" Value="27.5750515713077"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>pasos.wav</AudioFile>
+									<ConvertedFileIDList>
+										<File ID="999954140"/>
+									</ConvertedFileIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="pasos" ID="{285770DE-0FC6-4AC1-87E2-AD232FDD9099}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</RandomSequenceContainer>
+				<RandomSequenceContainer Name="enemies" ID="{A82DBB1D-7602-4B9A-8428-F327118E0F59}" ShortID="240245658">
+					<PropertyList>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-5</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{27FC5808-F95D-452C-8821-197CCF71A1B7}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{38F3581C-7869-431B-B6B2-F3530F3C1FFB}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="grugnidosZombie" ID="{B249B554-723B-4D41-88E2-599CA9FE9789}" ShortID="52087664">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{27FC5808-F95D-452C-8821-197CCF71A1B7}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{38F3581C-7869-431B-B6B2-F3530F3C1FFB}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="grugnidosZombie" ID="{9665066A-1C4E-4D43-ACD7-53C9CD82B54C}" ShortID="511069483">
+									<PropertyList>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="2.57462780825496"/>
+										<Property Name="TrimEnd" Type="Real64" Value="3.81204582462557"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>grugnidosZombie.wav</AudioFile>
+									<ConvertedFileIDList>
+										<File ID="21445485"/>
+									</ConvertedFileIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="grugnidosZombie" ID="{9665066A-1C4E-4D43-ACD7-53C9CD82B54C}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="grugnidosZombie_01" ID="{111E77D3-1FF1-40D1-B7F8-F00E58CDCF0C}" ShortID="1021854585">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{27FC5808-F95D-452C-8821-197CCF71A1B7}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{38F3581C-7869-431B-B6B2-F3530F3C1FFB}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="grugnidosZombie" ID="{133496C2-2D91-4C2B-9A5C-7B4F6A42E889}" ShortID="21445485">
+									<PropertyList>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="5.3687975226402"/>
+										<Property Name="TrimEnd" Type="Real64" Value="7.68396671455939"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>grugnidosZombie.wav</AudioFile>
+									<ConvertedFileIDList>
+										<File ID="68332301"/>
+									</ConvertedFileIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="grugnidosZombie" ID="{133496C2-2D91-4C2B-9A5C-7B4F6A42E889}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="grugnidosZombie_02" ID="{ADE7A992-5337-4AF7-BE97-9972567B45E2}" ShortID="695686436">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{27FC5808-F95D-452C-8821-197CCF71A1B7}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{38F3581C-7869-431B-B6B2-F3530F3C1FFB}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="grugnidosZombie" ID="{C1C7C350-87FB-4278-A030-722D6F8EFD58}" ShortID="863841525">
+									<PropertyList>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="10.6577616248694"/>
+										<Property Name="TrimEnd" Type="Real64" Value="11.5159708942877"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>grugnidosZombie.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="grugnidosZombie" ID="{C1C7C350-87FB-4278-A030-722D6F8EFD58}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</RandomSequenceContainer>
+				<Sound Name="muerteZombie" ID="{B3328466-0E47-4D72-ADD3-FD1574872636}" ShortID="162192626">
+					<PropertyList>
+						<Property Name="3DSpatialization" Type="int16" Value="1"/>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-6</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Attenuation">
+							<Custom>
+								<Attenuation Name="Attenuation (Custom)" ID="{F78DB98C-41E4-4366-BF59-E25C38700E60}" ShortID="824165279">
+									<PropertyList>
+										<Property Name="RadiusMax" Type="Real64" Value="50"/>
+									</PropertyList>
+									<CurveUsageInfoList>
+										<VolumeDryUsage>
+											<CurveUsageInfo Platform="Linked" CurveToUse="Custom">
+												<Curve Name="VolumeDry" ID="{32EBDD20-380F-4382-8F27-7021B04B245E}">
+													<PropertyList>
+														<Property Name="Flags" Type="int32" Value="3"/>
+													</PropertyList>
+													<PointList>
+														<Point>
+															<XPos>0</XPos>
+															<YPos>0</YPos>
+															<Flags>5</Flags>
+														</Point>
+														<Point>
+															<XPos>21.23824</XPos>
+															<YPos>-22.32645</YPos>
+															<Flags>0</Flags>
+														</Point>
+														<Point>
+															<XPos>50</XPos>
+															<YPos>-200</YPos>
+															<Flags>37</Flags>
+														</Point>
+													</PointList>
+												</Curve>
+											</CurveUsageInfo>
+										</VolumeDryUsage>
+										<VolumeWetGameUsage>
+											<CurveUsageInfo Platform="Linked" CurveToUse="UseVolumeDry"/>
+										</VolumeWetGameUsage>
+										<VolumeWetUserUsage>
+											<CurveUsageInfo Platform="Linked" CurveToUse="UseVolumeDry"/>
+										</VolumeWetUserUsage>
+										<LowPassFilterUsage>
+											<CurveUsageInfo Platform="Linked" CurveToUse="None"/>
+										</LowPassFilterUsage>
+										<HighPassFilterUsage>
+											<CurveUsageInfo Platform="Linked" CurveToUse="None"/>
+										</HighPassFilterUsage>
+										<SpreadUsage>
+											<CurveUsageInfo Platform="Linked" CurveToUse="None"/>
+										</SpreadUsage>
+										<FocusUsage>
+											<CurveUsageInfo Platform="Linked" CurveToUse="None"/>
+										</FocusUsage>
+									</CurveUsageInfoList>
+								</Attenuation>
+							</Custom>
+						</Reference>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{27FC5808-F95D-452C-8821-197CCF71A1B7}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{38F3581C-7869-431B-B6B2-F3530F3C1FFB}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="grugnidosZombie" ID="{581CF975-F522-491D-AE3E-55AA8D221887}" ShortID="828793110">
+							<PropertyList>
+								<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+								<Property Name="TrimBegin" Type="Real64" Value="16.2461010536398"/>
+								<Property Name="TrimEnd" Type="Real64" Value="17.922602882271"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>grugnidosZombie.wav</AudioFile>
+						</AudioFileSource>
+					</ChildrenList>
+					<PositioningInfo>
+						<Panner Name="" ID="{DED68153-EA1B-4C7F-8B3C-EC3392519CEC}">
+							<PropertyList>
+								<Property Name="PanX" Type="Real64" Value="-85.9437751004015"/>
+								<Property Name="PanY" Type="Real64" Value="-89.7872340425532"/>
+							</PropertyList>
+						</Panner>
+						<Position Name="" ID="{3E7C5537-24DD-45A4-B532-35498B8CAED9}"/>
+					</PositioningInfo>
+					<ActiveSourceList>
+						<ActiveSource Name="grugnidosZombie" ID="{581CF975-F522-491D-AE3E-55AA8D221887}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+			</ChildrenList>
+		</WorkUnit>
+	</AudioObjects>
+</WwiseDocument>
