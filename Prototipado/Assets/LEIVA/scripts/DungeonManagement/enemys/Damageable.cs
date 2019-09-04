@@ -4,69 +4,67 @@ using UnityEngine;
 
 public class Damageable : MonoBehaviour
 {
-    public float vida;
+    public float vida; //Vida del jefe , item o enemigo comun
     public float reciveDaño_tiempo;
     public bool recive;
     public bool lives;
-    bool is_player;
+    
     // Recordar hacer este script hederable por el amor de dios 
-    public void Start()
+    public virtual void Start()
     {
         recive = true;
         lives = true;
-        if (this.gameObject.tag == "Player") {
-            is_player = true;
+       
+    }
+    public float get_life() {
+        return vida;
+    }
+    public virtual void Acciones_extra()
+    {}
+    public virtual void inflijirDañosMeele(float amount) {
+        if (this.tag == "Enemy")
+        {
+            SendMessage("cancelar_acciones", false); //daña pero no muere permite stun
+            vida -= amount;
+
+        }
+        else
+        {
+            vida -= amount;
         }
     }
-    public void takeDamage(float amount,string gun_type)
+    public virtual void inflijirDañosDist(float amount) {
+        vida -= amount;
+    }
+    public  void takeDamage(float amount,string gun_type)
     {
         if (lives)
         {
             switch (gun_type)
             {
                 case "Meele":
-                    if (DoDamage())
+                    if (DoDamage()) //hay un conteo para el daño que se puede inflijir
                     {
-                        if (is_player && ControlInput.Not_beingAtacked)
-                        { //Se asegura que solo recibe un daño por animación
-                            SendMessage("recibe_Damague");
-                            GetComponent<Movimiento>().my_life -= amount;
-                        }
-                        else if (!is_player && this.tag == "Enemy")
-                        {
-                            SendMessage("cancelar_acciones", false); //daña pero no muere permite stun
-                            vida -= amount;
-
-                        }
-                        else {
-                            vida -= amount;
-                        }
+                        inflijirDañosMeele(amount);
                     }
                     break;
                 case "Gun":
-                    vida -= amount;
+                    inflijirDañosDist(amount);
                     break;
-
             }
             checkLife();
-            checkLifeP();
+            Acciones_extra();
         }
     
     }
 
-    void checkLife() {
-        if (!is_player && vida <= 0f)
+    public virtual void checkLife() { //chekea la vida
+        if (vida <= 0f)
         {
             Die();
         }
     }
-    void checkLifeP()
-    {
-        if (is_player && GetComponent<Movimiento>().my_life < 0f)
-        {
-            Die();
-        }
-    }
+
     bool DoDamage() // No puede recibir daño de la misma arma por medio seg.
     {
         if (recive)
@@ -84,17 +82,14 @@ public class Damageable : MonoBehaviour
         recive = true;
     }
 
-    Animator trigger_deaht;
+   // Animator trigger_deaht
 
     public virtual void Die() {
         lives = false;
         if (this.tag == "Enemy") {
             SendMessage("cancelar_acciones",true); //daña y muere
         }
-        else if(is_player)
-        {
-            SendMessage("muerte");
-        }
+  
     }
 
     public void desaparcer() {

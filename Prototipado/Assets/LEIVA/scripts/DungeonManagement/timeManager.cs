@@ -15,6 +15,7 @@ public class timeManager : MonoBehaviour
     public Transform respan_point;
     float vida_anterios;
     float velAnt;
+    public bool boos_victory;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,27 +27,35 @@ public class timeManager : MonoBehaviour
         original = tiempo;
         Movimiento.Is_playable = true; // El game manager se encargara de eso luego
         vida_anterios = player_script.my_life;
+        boos_victory = false; // aun no le gana al boos
     }
 
-
+    void checar_tiempo() {
+            if (Movimiento.Is_playable)
+            {
+                tiempo -= Time.deltaTime;
+                if (tiempo <= 0)
+                {
+                    // player_script.my_life = 0;
+                    //tiempo = original;
+                    player_script.muerte();
+                    jugador.GetComponent<Animator>().ResetTrigger("back");
+                    mooriste.gameObject.SetActive(true);
+                }
+                Tiemp_ui.text = "Tiempo: " + tiempo;
+            }
+            else if (tiempo > 0)
+            {
+                StartCoroutine("espera");
+            }
+        
+    }
     // Update is called once per frame
     void Update()
     {
-        if (Movimiento.Is_playable) {
-            tiempo -= Time.deltaTime;
-            if (tiempo <= 0)
-            {
-               // player_script.my_life = 0;
-                //tiempo = original;
-                player_script.muerte();
-                jugador.GetComponent<Animator>().ResetTrigger("back");
-                mooriste.gameObject.SetActive(true);
-            }
-            Tiemp_ui.text = "Tiempo: " + tiempo;
-        }
-        else if(tiempo>0)
+        if (!boos_victory)
         {
-            StartCoroutine("espera");
+            checar_tiempo();
         }
     }
     IEnumerator espera()
@@ -58,8 +67,8 @@ public class timeManager : MonoBehaviour
         jugador.GetComponent<Animator>().ResetTrigger("Is_Hurt");
         jugador.GetComponent<Animator>().SetTrigger("back");
         jugador.GetComponent<ControlInput>().Reset();
-        jugador.GetComponent<Damageable>().lives = true;
-        jugador.GetComponent<Damageable>().vida = vida_anterios;
+        jugador.GetComponent<PerDameage>().lives = true;
+        //jugador.GetComponent<Damageable>().vida = vida_anterios;
         Movimiento.Is_playable = true;
     }
 
