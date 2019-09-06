@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 539772514460954649}
   - component: {fileID: 539772514460954648}
   m_Layer: 0
-  m_Name: Item_Good (1)
+  m_Name: Item_Good
   m_TagString: item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 539772514460954655}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 1}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2.1469545, y: 2.1469545, z: 2.1469545}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -4775,6 +4775,7 @@ MonoBehaviour:
   vida: 10
   "reciveDa\xF1o_tiempo": 0.5
   recive: 1
+  lives: 0
   Arma_cuerpo: {fileID: 0}
   Arma_Distancia: {fileID: 0}
   plus_Arma_cuerpo: 2
