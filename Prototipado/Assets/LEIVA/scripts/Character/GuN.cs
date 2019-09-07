@@ -35,9 +35,7 @@ public class GuN : MonoBehaviour
 
             //nextTimeTofire = Time.time + 100f / firerate; // El fire rate es una decima de segundo 1/10
             Shoot();
-			//agrego script para audio de wwise
-			AkSoundEngine.PostEvent("disparo", gameObject);
-			StartCoroutine("Firerate");
+            StartCoroutine("Firerate");
         }
     }
     //Espera una cantidad de tiempo antes de que el jugador puede disparar

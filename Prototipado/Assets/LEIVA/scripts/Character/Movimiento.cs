@@ -118,24 +118,5 @@ public class Movimiento : MonoBehaviour
     public float get_vel() {
         return vel;
     }
-
-	public void WwiseCallPaso()
-	{
-		AkSoundEngine.PostEvent("paso", gameObject);
-	}
-
-	public void WwiseCallAtk1()
-	{
-		AkSoundEngine.PostEvent("atk1", gameObject);
-	}
-
-	public void WwiseCallAtk2()
-	{
-		AkSoundEngine.PostEvent("atk2", gameObject);
-	}
-
-	public void WwiseCallAtk3()
-	{
-		AkSoundEngine.PostEvent("atk3", gameObject);
-	}
+   
 }

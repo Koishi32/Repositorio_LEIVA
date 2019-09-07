@@ -26,8 +26,6 @@ public class MeeleGun : MonoBehaviour
             Damageable target = collision.transform.GetComponent<Damageable>();
             if (target != null)
             {
-				//agrego el script para llamar el audio de wwise
-				AkSoundEngine.PostEvent("golpe",gameObject);
                 float tempImpactforze = impactforce;
                 target.takeDamage(damage, "Meele"); // Si el objeto golpeado por el arma Meele
                 if (collision.attachedRigidbody.velocity.magnitude == 0) { //si esta quieto
