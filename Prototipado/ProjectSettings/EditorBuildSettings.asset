@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/LEIVA/escenas/SampleScene.unity
+    guid: a5d80a70219adb64ba48e4b7f0641739
+  - enabled: 1
+    path: Assets/LEIVA/escenas/Menu_Principal.unity
+    guid: 6d596e1170c295043908ff9321faa364
   m_configObjects: {}
