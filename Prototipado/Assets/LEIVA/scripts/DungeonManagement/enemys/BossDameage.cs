@@ -48,6 +48,7 @@ public class BossDameage : Damageable
                 Movimiento.is_FPS = false;
             }*/
             titulo_ganador.SetActive(true);
-        }
+			AkSoundEngine.PostEvent("cancion3", this.gameObject);
+		}
     }
 }

@@ -85,7 +85,12 @@ public class ControlInput : MonoBehaviour
     }
     public void Reset()
     {
-        animacion_FPS.SetBool("Atack1", false);
+		
+		AkSoundEngine.PostEvent("blast", this.gameObject);
+		AkSoundEngine.PostEvent("cancion1", this.gameObject);
+
+
+		animacion_FPS.SetBool("Atack1", false);
         animacion_FPS.SetBool("Atack2", false);
         animacion_FPS.SetBool("Atack3", false);
         efecto_arma.SetActive(false);
@@ -156,6 +161,26 @@ public class ControlInput : MonoBehaviour
     }
     
 
+	//funciones para llamar sonidos
+	public void WwiseAtk1()
+	{
+		AkSoundEngine.PostEvent("atk1", this.gameObject);
+	}
+
+	public void WwiseAtk2()
+	{
+		AkSoundEngine.PostEvent("atk2", this.gameObject);
+	}
+
+	public void WwiseAtk3()
+	{
+		AkSoundEngine.PostEvent("atk3", this.gameObject);
+	}
+
+	public void WwisePaso()
+	{
+		AkSoundEngine.PostEvent("paso", this.gameObject);
+	}
 }
 
 

@@ -7,7 +7,8 @@ public class FinalBossControl : NPCcontroller
     public override void elegir_atack()
     { // se pueden meter mas cases para mas animaciones
         opcion = Mathf.RoundToInt(Random.Range(0,4));
-        print(opcion);
+		AkSoundEngine.PostEvent("cancion2", this.gameObject);
+		print(opcion);
         switch (opcion)
         {
             case 0:

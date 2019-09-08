@@ -21,9 +21,11 @@ public class MeeleGun : MonoBehaviour
     }
     private void OnTriggerEnter(Collider collision) // Toca al enemigo llama a su funcion Damageable
     {
-        get_componenet();
+		
+		get_componenet();
         if (ataca_meele && collision.gameObject.tag == Nombre_Objetivo) {
-            Damageable target = collision.transform.GetComponent<Damageable>();
+			AkSoundEngine.PostEvent("golpe", this.gameObject);
+			Damageable target = collision.transform.GetComponent<Damageable>();
             if (target != null)
             {
                 float tempImpactforze = impactforce;
@@ -37,7 +39,8 @@ public class MeeleGun : MonoBehaviour
 
             }
         } else if (ataca_meele && collision.gameObject.tag == "item") {
-            Damageable target = collision.transform.GetComponent<Damageable>();
+			AkSoundEngine.PostEvent("tomeItem", this.gameObject);
+			Damageable target = collision.transform.GetComponent<Damageable>();
             target.takeDamage(damage, "Meele");
         }
     }

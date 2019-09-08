@@ -45,7 +45,8 @@ public class GuN : MonoBehaviour
     }
     void Shoot()
     {
-        muzzleflash.Play();
+		AkSoundEngine.PostEvent("disparo", this.gameObject);
+		muzzleflash.Play();
         RaycastHit hit;
        // disparoaudio.Play();
         //Despues de los efectos de sonido y particulas, si el raycast detecta algo entonces imprime su nombre

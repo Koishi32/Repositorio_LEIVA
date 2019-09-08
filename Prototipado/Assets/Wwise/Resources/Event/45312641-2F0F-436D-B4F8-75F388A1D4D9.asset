@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3cb9a3c71b61ff64b889559ff9c2276f, type: 3}
+  m_Name: 45312641-2F0F-436D-B4F8-75F388A1D4D9
+  m_EditorClassIdentifier: 
+  objectName: atk2
+  id: 2982465185
+  guid: 45312641-2F0F-436D-B4F8-75F388A1D4D9

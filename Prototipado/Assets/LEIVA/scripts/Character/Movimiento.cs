@@ -106,7 +106,8 @@ public class Movimiento : MonoBehaviour
         //transform.rotation = rotation;
     }
     public void muerte(){
-        if (Movimiento.is_FPS == true) {
+		AkSoundEngine.PostEvent("tambores", this.gameObject);
+		if (Movimiento.is_FPS == true) {
             SendMessage("cambia_camaras");
             Movimiento.is_FPS = false;
         }
