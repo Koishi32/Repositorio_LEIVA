@@ -13,7 +13,7 @@ public class ThirPersonCamera : Camera_I
     public Transform Mirar_jugador; //localizacion del jugador
     public Transform camTransform; //transform de esta camara
     public float distancia; // Que tanto se aleja
-   
+   // public GameObject objeto_AMirar;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,6 +27,8 @@ public class ThirPersonCamera : Camera_I
         Quaternion rotation = Quaternion.Euler(-currentX + offset, currentY , 0); //Rotacion depende del Mouse
         camTransform.position = Mirar_jugador.position + rotation * dir;
         camTransform.LookAt(Mirar_jugador.position);    // Asegura que la rotacion sea  alrededor de ljugador
+
+       // objeto_AMirar.transform.position = Mirar_jugador.position + rotation * -dir;
     }
     public override void arreglo_angulos() {
         currentX = Mathf.Clamp(currentX, ANGLE_MIN, ANGLE_MAX); //Limita angulos en los que sube y baja cabeza

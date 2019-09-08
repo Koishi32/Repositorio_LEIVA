@@ -13,8 +13,8 @@ public class Camera_I : MonoBehaviour
     void Update()
     {
         if (Movimiento.Is_playable) {
-            currentX += Input.GetAxis("Mouse Y") ;
-            currentY += Input.GetAxis("Mouse X") ;
+            currentX += Input.GetAxis("Mouse Y");
+            currentY += Input.GetAxis("Mouse X");
             
             arreglo_angulos();
         }

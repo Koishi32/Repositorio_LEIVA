@@ -76,6 +76,7 @@ public class Movimiento : MonoBehaviour
     public void rotea() {
         currentX += Input.GetAxis("Mouse X");
     }
+   // public Transform camaraAmirar;
     // Cambia los booleanos deacuerdo a si es FPS o no
     public void cambio() { // Cambia los Booleanos para las animaciones
         is_FPS = !is_FPS;
@@ -101,6 +102,8 @@ public class Movimiento : MonoBehaviour
     {
         Quaternion rotation_Player = Quaternion.Euler(0, currentX, 0); //Rotacion depende del Mouse
         this.transform.rotation = rotation_Player;
+        //Quaternion rotation = Quaternion.LookRotation(camaraAmirar.position, Vector3.up);
+        //transform.rotation = rotation;
     }
     public void muerte(){
         if (Movimiento.is_FPS == true) {

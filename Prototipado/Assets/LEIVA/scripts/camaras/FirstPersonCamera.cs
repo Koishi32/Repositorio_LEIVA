@@ -11,11 +11,13 @@ public class FirstPersonCamera : Camera_I
     //public float clamp;
     // public float rotationX_speed; //velocidad del Giro de la camara
     private void LateUpdate() { // Rotea junto con el Mouse
-    /*Quaternion rotationMOD = Quaternion.Euler((-currentX), (currentY), transform.rotation.z);
-    Quaternion newRot = Quaternion.Lerp(this.transform.rotation, rotationMOD, 0);
-    rotationMOD = Quaternion.Euler(transform.rotation.x, (currentY),transform.rotation.z);
-        this.transform.rotation= Quaternion.Lerp(newRot, rotationMOD, 0); ;*/
-    Vector3 rotationMOD =new Vector3((-currentX), (currentY),0);
+                                /*Quaternion rotationMOD = Quaternion.Euler((-currentX), (currentY), transform.rotation.z);
+                                Quaternion newRot = Quaternion.Lerp(this.transform.rotation, rotationMOD, 0);
+                                rotationMOD = Quaternion.Euler(transform.rotation.x, (currentY),transform.rotation.z);
+                                    this.transform.rotation= Quaternion.Lerp(newRot, rotationMOD, 0); ;*/
+
+        Vector3 rotationMOD =new Vector3((-currentX), (currentY),0);
+ 
         this.transform.rotation = Quaternion.RotateTowards(this.transform.rotation, Quaternion.Euler(rotationMOD), delts);
     } 
     public override void arreglo_angulos()

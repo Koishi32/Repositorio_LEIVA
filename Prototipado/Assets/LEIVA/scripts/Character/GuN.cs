@@ -13,7 +13,7 @@ public class GuN : MonoBehaviour
     public GameObject impactEffect;
     public float impactforce=100f;
     public float ShootInterval ;
-    public AudioSource disparoaudio;
+    //public AudioSource disparoaudio;
     public bool canfire = true;
 
     // private float nextTimeTofire = 0f;
@@ -47,7 +47,7 @@ public class GuN : MonoBehaviour
     {
         muzzleflash.Play();
         RaycastHit hit;
-        disparoaudio.Play();
+       // disparoaudio.Play();
         //Despues de los efectos de sonido y particulas, si el raycast detecta algo entonces imprime su nombre
         if (Physics.Raycast(FPSCAM.transform.position,FPSCAM.transform.forward,out hit,range)) {
             Damageable target = hit.transform.GetComponent<Damageable>();
