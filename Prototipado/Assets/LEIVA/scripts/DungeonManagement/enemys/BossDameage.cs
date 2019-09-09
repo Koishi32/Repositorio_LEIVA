@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 public class BossDameage : Damageable
 {
     public GameObject titulo_ganador;
@@ -48,7 +49,14 @@ public class BossDameage : Damageable
                 Movimiento.is_FPS = false;
             }*/
             titulo_ganador.SetActive(true);
+			StartCoroutine("pantallaGana");
 			AkSoundEngine.PostEvent("cancion3", this.gameObject);
 		}
     }
+
+	IEnumerator pantallaGana()
+	{
+		yield return new WaitForSeconds(5);
+		SceneManager.LoadScene(2);
+	}
 }

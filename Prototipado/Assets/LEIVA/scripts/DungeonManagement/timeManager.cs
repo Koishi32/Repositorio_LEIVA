@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
 public class timeManager : MonoBehaviour
 {
     public float tiempo;
@@ -39,10 +41,13 @@ public class timeManager : MonoBehaviour
                     // player_script.my_life = 0;
                     //tiempo = original;
                     player_script.muerte();
+
+				//se agrega contador de tiempo para despues cambiar a pantalla de derrota
+				StartCoroutine("pantallaPierde");
                     jugador.GetComponent<Animator>().ResetTrigger("back");
                     mooriste.gameObject.SetActive(true);
                 }
-                Tiemp_ui.text = "Tiempo: " + tiempo;
+			Tiemp_ui.text = "Tiempo: " + tiempo.ToString("f0") ;
             }
             else if (tiempo > 0)
             {
@@ -71,6 +76,12 @@ public class timeManager : MonoBehaviour
         //jugador.GetComponent<Damageable>().vida = vida_anterios;
         Movimiento.Is_playable = true;
     }
+
+	IEnumerator pantallaPierde()
+	{
+		yield return new WaitForSeconds(5);
+		SceneManager.LoadScene(3);
+	}
 
     public float time_rise;
     public void aumenta_tiempo() {

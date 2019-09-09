@@ -15,6 +15,10 @@ public class ReturnMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+		if (Input.GetKeyDown(KeyCode.R)){
+			SceneManager.LoadScene(1);
+		}
+
         if (Input.anyKey || Input.GetAxis("Mouse Y") !=0 || Input.GetAxis("Mouse X") !=0) {
             tiempo_actual = 0;
         }
