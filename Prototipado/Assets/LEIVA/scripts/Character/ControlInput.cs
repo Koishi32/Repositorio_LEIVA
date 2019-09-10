@@ -18,12 +18,17 @@ public class ControlInput : MonoBehaviour
     float anterior;
     public float Speed_Rise;
 	private bool animCorrerFast = false;
+    float vel_aniorg;
+    public float new_anime_vel;
     // Start is called before the first frame update
     void Start()
     {
         Reset();
+        vel_aniorg = get_seppdani();
     }
-
+    float get_seppdani() {
+        return 1;
+    }
     // Update is called once per frame
     void Update()
     {
@@ -53,10 +58,10 @@ public class ControlInput : MonoBehaviour
 		//cambia velocidad de animacion
 		if (animCorrerFast && (animacion_FPS.GetCurrentAnimatorStateInfo(0).IsName("Walk_FPS") || animacion_FPS.GetCurrentAnimatorStateInfo(0).IsName("Walk_TerceraP")))
 		{
-			animacion_FPS.speed = 2.0f;
+			animacion_FPS.speed = new_anime_vel;
 
 		} else {
-			animacion_FPS.speed = 1.0f;
+			animacion_FPS.speed =vel_aniorg;
 		}
         
     }

@@ -13,6 +13,7 @@ public class GuN : MonoBehaviour
     public GameObject impactEffect;
     public float impactforce=100f;
     public float ShootInterval ;
+   // public GameObject particulosa;
     //public AudioSource disparoaudio;
     public bool canfire = true;
 
@@ -61,6 +62,7 @@ public class GuN : MonoBehaviour
         }
         // Instanci un efecto de impacto en el lugar que golpeo el raycast
         GameObject impactGO = Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
+        //GameObject.Instantiate(particulosa, this.transform.forward,Quaternion.identity);
         Destroy(impactGO,2);
     }
     public float get_Damage()
